@@ -1,5 +1,5 @@
 # observable-data-tools
-Repository of [Observable](https://observablehq.com/explore) Data Toools and Notebooks in `.js`, `.nb.json`, `.ojs`, `.omd` and `.qmd` document formats for Data Previews in [VSCode](https://code.visualstudio.com/) with [Observable JS](https://marketplace.visualstudio.com/items?itemName=GordonSmith.observable-js) extension and [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) extension for new [Quarto publishing](https://quarto.org/docs/publishing/) tools.
+[Random Fractals Inc.](https://observablehq.com/@randomfractals?tab=collections) stash of [Observable](https://observablehq.com/explore) Data Toools and [Notebooks](https://twitter.com/hashtag/dataNotebooks?src=hashtag_click) 📚 in `.js`, `.nb.json`, `.ojs`, `.omd` and `.qmd` document formats for Data Previews in [VSCode](https://code.visualstudio.com/) with [Observable JS](https://marketplace.visualstudio.com/items?itemName=GordonSmith.observable-js) extension, [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) extension, and new [Quarto publishing](https://quarto.org/docs/publishing/) tools.
 
 ## Observable Data Notebooks
 
