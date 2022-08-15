@@ -1,0 +1,108 @@
+
+---
+title: 'Data Table Viewer'
+author: Taras Novak (@RandomFractals)
+format:
+  html:
+    code-copy: true
+    code-fold: true
+    code-summary: 'code'
+    code-tools: true
+---
+
+Use this Data Table 🈸 Viewer 📓 to view sample datasets or preview any public
+[Apache Arrow](https://observablehq.com/@randomfractals/apache-arrow),
+**CSV**, or **JSON array** data. Just paste your data url to fetch it.
+
+Also, try [Data Table](https://github.com/RandomFractals/vscode-data-table) 🈸 notebook 📓 cell ⌗ output renderer extension in [VSCode Notebooks](https://marketplace.visualstudio.com/search?target=VSCode&category=Notebooks&sortBy=Installs) 📚.
+
+```{ojs}
+viewof dataSet = Inputs.select(dataSets, {
+  label: html`<b>dataset</b>`
+})
+
+viewof dataUrl = Inputs.text({
+  label: html`<b>dataUrl</b>`,
+  placeholder: 'type data url and click fetch',
+  value: `${dataUrlParam ? dataUrlParam : 'https://raw.githubusercontent.com/vega/vega-datasets/master/data/' + dataSet}`,
+  submit: 'fetchData'
+})
+
+shareLink = md `*share a link to your [data](https://observablehq.com/@randomfractals/data-table-viewer?dataUrl=${dataUrl})*`
+
+viewof dataSummaryView = SummaryTable(data)
+
+viewof dataSearchResults = Inputs.search(data)
+
+tableView = Inputs.table(dataSearchResults)
+
+data = fetchData(dataUrl)
+
+dataUrlParam = new URLSearchParams(html`<a href>`.search).get('dataUrl')
+
+dataSets = [
+  'airports.csv', 'co2-concentration.csv', 'disasters.csv', 'flights-3m.csv', 'flights-airport.csv',
+  'gapminder-health-income.csv', 'github.csv', 'iowa-electricity.csv', 'la-riots.csv', 'lookup_groups.csv',
+  'lookup_people.csv', 'population_engineers_hurricanes.csv', 'seattle-temps.csv', 'seattle-weather.csv',
+  'sf-temps.csv', 'sp500.csv', 'stocks.csv', 'us-employment.csv', 'weather.csv', 'windvectors.csv', 'zipcodes.csv',
+  'barley.json', 'birdstrikes.json', 'budget.json', 'budgets.json', 'burtin.json', 'cars.json', 'climate.json',
+  'countries.json', 'crimea.json', 'driving.json', 'flare-dependencies.json', 'flare.json',
+  'flights-2k.json', 'flights-5k.json', 'flights-10k.json', 'flights-20k.json',
+  'flights-200k.json', 'flights-200k.arrow',
+  'gapminder.json', 'income.json', 'iris.json', 'jobs.json', 'londonCentroids.json',
+  'monarchs.json', 'movies.json', 'normal-2d.json', 'points.json',
+  'udistrict.json', 'unemployment-across-industries.json', 'us-state-capitals.json',
+  'weball26.json', 'wheat.json'
+]
+```
+
+```{ojs}
+async function fetchData(dataUrl) {
+  let data = [];
+  console.log('fetchData:dataUrl:', dataUrl);
+  if (dataUrl.endsWith('.csv')) {
+    data = await d3.csvParse(await d3.text(dataUrl), d3.autoType);
+  }
+  else if (dataUrl.endsWith('.json')) {
+    data = await d3.json(dataUrl);
+  }
+  else if (dataUrl.endsWith('.arrow')) {
+    data = loadArrowData(dataUrl);
+  }
+  return data;
+}
+
+async function loadArrowData(dataUrl){
+  const response = await fetch(dataUrl);
+  const arrayBuffer = await response.arrayBuffer();
+  const table = arrow.Table.from(new Uint8Array(arrayBuffer));
+  const rows = Array(table.length);
+  const fields = table.schema.fields.map(d => d.name);
+  for (let i=0, n=rows.length; i<n; ++i) {
+    const proto = {};
+    fields.forEach((fieldName, index) => {
+      const column = table.getColumnAt(index);
+      proto[fieldName] = column.get(i);
+    });
+    rows[i] = proto;
+  }
+  return rows;
+}
+
+tableStyles = html `
+<style>
+/* add space for sort direction symbol */
+thead th span {
+  margin-left: 0 !important;
+  padding-right: 0.4rem;
+}
+</style>`
+
+```
+## Imports
+
+```{ojs}
+import {SummaryTable} from "@observablehq/summary-table"
+
+arrow = require('apache-arrow@6.0.1')
+```
