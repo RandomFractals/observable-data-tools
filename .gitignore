@@ -1,3 +1,10 @@
+# Quarto pub tools preview/web files
+notebooks/quarto/*_files
+notebooks/quarto/*.html
+
+# R Studio user project file
+.Rproj.user
+
 # History files
 .Rhistory
 .Rapp.history
