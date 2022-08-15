@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hpcc-js/common/font-awesome/css/font-awesome.min.css">
+    <style>
+    body {
+        padding: 0px;
+        margin: 8px;
+        background: white;
+        color: black;
+    }
+    #placeholder {
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        right: 8px;
+        bottom: 8px;
+        max-width: 960px;
+    }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@hpcc-js/observable-md/dist/index.full.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var omdMod = window["@hpcc-js/observable-md"]
+    </script>
+
+</head>
+
+<body onresize="doResize()">
+    <div id="placeholder">
+    </div>
+    <script>
+        var app = new omdMod.Observable()
+            .target("placeholder")
+            .showValues(true)
+            .mode("ojs")
+            .text(`md\`# Data Table Viewer
+
+Use this Data Table 🈸 Viewer 📓 to view sample datasets or preview any public
+[Apache Arrow](https://observablehq.com/@randomfractals/apache-arrow),
+**CSV**, [**GeoJSON**](https://www.rfc-editor.org/rfc/rfc7946.html) or **JSON array** data. Just paste your data url to fetch it.
+
+Also, try [Data Table](https://github.com/RandomFractals/vscode-data-table) 🈸 notebook 📓 cell ⌗ output renderer extension in [VSCode Notebooks](https://marketplace.visualstudio.com/search?target=VSCode&category=Notebooks&sortBy=Installs) 📚.
+\`
+
+viewof dataSet = Inputs.select(dataSets, {
+  label: html\`<b>dataset</b>\`
+})
+
+viewof dataUrl = Inputs.text({
+  label: html\`<b>dataUrl</b>\`,
+  placeholder: 'type data url and click fetch',
+  value: \`\${dataUrlParam ? dataUrlParam : 'https://raw.githubusercontent.com/vega/vega-datasets/master/data/' + dataSet}\`,
+  submit: 'fetchData'
+})
+
+shareLink = md \`*share a link to your [data](https://observablehq.com/@randomfractals/data-table-viewer?dataUrl=\${dataUrl})*\`
+
+viewof dataSummaryView = SummaryTable(data)
+
+viewof dataSearchResults = Inputs.search(data)
+
+tableView = Inputs.table(dataSearchResults)
+
+data = fetchData(dataUrl)
+
+dataUrlParam = new URLSearchParams(html\`<a href>\`.search).get('dataUrl')
+
+dataSets = [
+  'airports.csv', 'co2-concentration.csv', 'disasters.csv', 'flights-3m.csv', 'flights-airport.csv',
+  'gapminder-health-income.csv', 'github.csv', 'iowa-electricity.csv', 'la-riots.csv', 'lookup_groups.csv',
+  'lookup_people.csv', 'population_engineers_hurricanes.csv', 'seattle-temps.csv', 'seattle-weather.csv',
+  'sf-temps.csv', 'sp500.csv', 'stocks.csv', 'us-employment.csv', 'weather.csv', 'windvectors.csv', 'zipcodes.csv',
+  'barley.json', 'birdstrikes.json', 'budget.json', 'budgets.json', 'burtin.json', 'cars.json', 'climate.json',
+  'countries.json', 'crimea.json', 'driving.json', 'flare-dependencies.json', 'flare.json',
+  'flights-2k.json', 'flights-5k.json', 'flights-10k.json', 'flights-20k.json',
+  'flights-200k.json', 'flights-200k.arrow',
+  'gapminder.json', 'income.json', 'iris.json', 'jobs.json', 'londonCentroids.json',
+  'monarchs.json', 'movies.json', 'normal-2d.json', 'points.json',
+  'udistrict.json', 'unemployment-across-industries.json', 'us-state-capitals.json',
+  'weball26.json', 'wheat.json'
+]
+
+async function fetchData(dataUrl) {
+  let data = [];
+  console.log('fetchData:dataUrl:', dataUrl);
+  if (dataUrl.endsWith('.csv')) {
+    data = await d3.csvParse(await d3.text(dataUrl), d3.autoType);
+  }
+  else if (dataUrl.endsWith('.json') || dataUrl.endsWith('.geojson')) {
+    data = await d3.json(dataUrl);
+    if (data.features) {
+      data = flattenGeoData(data);
+    }
+  }
+  else if (dataUrl.endsWith('.arrow')) {
+    data = loadArrowData(dataUrl);
+  }
+  return data;
+}
+
+function flattenGeoData(data) {
+  if (data.features) {
+    const features = data.features.map(feature => {
+      let geometry = {};
+      Object.keys(feature?.geometry).forEach(key => {
+        geometry[\`geometry.\${key}\`] = feature.geometry[key];
+      });
+      let properties = {};
+      Object.keys(feature?.properties).forEach(key => {
+        properties[\`\${key}\`] = feature.properties[key];
+      });
+      const {geometry: g, properties: p, ...restOfKeys} = feature;
+      return {...restOfKeys, ...properties, ...geometry};
+    });
+    return features;
+  }
+  return data;
+}
+
+async function loadArrowData(dataUrl){
+  const response = await fetch(dataUrl);
+  const arrayBuffer = await response.arrayBuffer();
+  const table = arrow.Table.from(new Uint8Array(arrayBuffer));
+  const rows = Array(table.length);
+  const fields = table.schema.fields.map(d => d.name);
+  for (let i=0, n=rows.length; i<n; ++i) {
+    const proto = {};
+    fields.forEach((fieldName, index) => {
+      const column = table.getColumnAt(index);
+      proto[fieldName] = column.get(i);
+    });
+    rows[i] = proto;
+  }
+  return rows;
+}
+
+tableStyles = html \`
+<style>
+/* add space for sort direction symbol */
+thead th span {
+  margin-left: 0 !important;
+  padding-right: 0.4rem;
+}
+</style>\`
+
+md\`## Imports\`
+
+import {SummaryTable} from "@observablehq/summary-table"
+
+arrow = require('apache-arrow@6.0.1')`)
+            ;
+
+        doResize();
+
+        function doResize() {
+        if (app) {
+            app
+                .resize()
+                .lazyRender()
+                ;
+        }
+    }
+    </script>
+</body>
+
+</html>
