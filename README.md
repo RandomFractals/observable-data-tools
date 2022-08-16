@@ -3,7 +3,7 @@
 
 ## Observable Data Notebooks
 
-[**Tables Notebook Collection** 📚](https://observablehq.com/collection/@randomfractals/tables)
+Our [Tables Notebook Collection 📚](https://observablehq.com/collection/@randomfractals/tables) provides a list of generic data notebooks utilizing built-in and custom Observable input controls and widgets to load, preview, search, and query data from various data sources in a browser or in VSCode IDE.
 
 | Notebook | Description |
 | --- | --- |
