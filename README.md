@@ -1,10 +1,9 @@
 # observable-data-tools
 
-![Observable Data Tools & Notebooks](https://github.com/RandomFractals/observable-data-tools/blob/main/docs/images/tabular-data-tools.png?raw=true
- "Observable Data Tools & Notebooks")
-
 [Random Fractals](https://observablehq.com/@randomfractals?tab=collections) stash of [Observable](https://observablehq.com/explore) Data [Tools](https://twitter.com/search?q=(%23dataTools)%20(from%3ATarasNovak)&src=typed_query&f=live) 🛠️ and [Notebooks](https://twitter.com/search?q=(%23dataNotebooks)%20(from%3ATarasNovak)&src=typed_query&f=live) 📚 in [ES Modules](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/) `.js`, `.nb.json`, `.ojs`, `.omd`, `.html` and `.qmd` document formats for Data Previews in a browser and in [VSCode IDE](https://code.visualstudio.com/) with [Observable JS](https://marketplace.visualstudio.com/items?itemName=GordonSmith.observable-js) extension, [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) extension, and new [Quarto publishing](https://quarto.org/docs/publishing/) tools.
 
+![Observable Data Tools & Notebooks](https://github.com/RandomFractals/observable-data-tools/blob/main/docs/images/tabular-data-tools.png?raw=true
+ "Observable Data Tools & Notebooks")
 ## Observable Data Notebooks
 
 Our [Tables Notebook Collection 📚](https://observablehq.com/collection/@randomfractals/tables) provides a list of generic data notebooks utilizing built-in and custom Observable input controls and widgets to load, preview, search, and query data from various data sources in a browser or in VSCode IDE.
