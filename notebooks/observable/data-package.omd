@@ -1,0 +1,128 @@
+
+# Data Package 📦
+
+View <a href="https://specs.frictionlessdata.io/data-package/" target="_blank" title="Data Package Specification">Frictionless Data Package</a> **tabular** data resources with <a href="https://github.com/frictionlessdata/datapackage-js" target="_blank" title="Data Hub">datapackage JS</a> library.
+
+Sample datasets from: <a href="https://github.com/datasets" target="_blank" title="Data Packaged Core Datasets">https://github.com/datasets</a>.
+
+## Data Package 📦
+
+Select a data package to view resources:
+```
+viewof dataPackageName = Inputs.select(dataPackageNames, {
+  label: html`<b>Datapackage</b>`
+})
+
+dataRepositoryLink = md `**Repository** &nbsp; ⟶ [datasets/${dataPackageName}](https://github.com/datasets/${dataPackageName})`
+
+viewof dataPackageUrl = Inputs.text({
+  label: html`<b>Datapackage Url</b>`,
+  placeholder: 'type data url and click fetch',
+  value: `${dataPackageUrlParam ? dataPackageUrlParam : `https://raw.githubusercontent.com/datasets/${dataPackageName}/master/datapackage.json`}`,
+  submit: 'fetchData'
+})
+
+shareLink = md `*share a link to this [datapackage notebook](https://observablehq.com/@randomfractals/data-package?dataPackageUrl=${dataPackageUrl})*`
+
+dataPackageInfo = fetch(dataPackageUrl).then(response => response.json())
+```
+### ${dataPackageInfo.title}
+
+${dataPackageInfo.description ? dataPackageInfo.description : ''}
+
+### Resources
+```
+viewof resourceName = Inputs.select(dataPackage.resourceNames.filter(resourceName => resourceName !== 'validation_report'), {
+  label: html`<b>Resource</b>`
+})
+
+resourceTable = Inputs.table([resourceInfo.descriptor], {
+  format: {
+    datahub: d => d.type
+  }
+})
+
+resourceLink = md`**${resourceInfo.descriptor.path}**`
+
+viewof searchResults = Inputs.search(resourceData)
+
+Inputs.table(searchResults)
+
+resourceData = {
+  if (resource.tabular) {
+    return await resource.read({keyed: true})
+  }
+  return [];
+}
+```
+## Data Package API
+```
+dataPackageUrlParam = new URLSearchParams(html`<a href>`.search).get('dataPackageUrl')
+
+dataPackageNames = [
+  'world-cities',
+  'country-codes',
+  'geo-countries',
+  'geoip2-ipv4',
+  'fips-10-4',
+  'un-locode',
+  'airport-codes',
+  'language-codes',
+  'population',
+  'population-city',
+  'gdp',
+  'gdp-uk',
+  'gdp-us',
+  'cash-surplus-deficit',
+  'dac-and-crs-code-lists',
+  'unece-units-of-measure',
+  'currency-codes',
+  's-and-p-500-companies',
+  'nasdaq-listings',
+  'nyse-other-listings',
+  'finance-vix',
+  'cpi',
+  'cpi-us',
+  'exchange-rates',
+  'employment-us',
+  'house-prices-us',
+  'house-prices-uk',
+  'house-prices-global',
+  'household-income-us-historical',
+  'oil-prices',
+  'natural-gas',
+  'expenditure-on-research-and-development',
+  'usa-education-budget-analysis',
+  'pharmaceutical-drug-spending',
+  'genome-sequencing-costs',
+  'covid-19',
+  'iso-container-codes',
+  'global-temp',
+  'global-temp-anomalies',
+  'co2-ppm',
+  'co2-fossil-by-nation',
+  'top-level-domain-names',
+  'unicode-emojis',
+  'registry'
+]
+
+dataPackage = fetchData(dataPackageUrl)
+
+resourceNames = dataPackage.resourceNames.filter(resourceName => resourceName !== 'validation_report')
+
+resources = dataPackage.resources
+
+resourceUrl = `${resourceInfo._basePath}/${resourceInfo.descriptor.path}`
+
+resourceInfo = dataPackage.getResource(resourceName)
+
+resource = DataPackage.Resource.load({path: resourceUrl})
+
+async function fetchData(dataPackageUrl) {
+  return await DataPackage.Package.load(dataPackageUrl);
+}
+```
+## Imports
+```
+DataPackage = require('https://unpkg.com/datapackage@1.1.10/dist/datapackage.min.js')
+```
