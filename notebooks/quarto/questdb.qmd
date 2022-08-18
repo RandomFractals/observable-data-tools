@@ -1,0 +1,205 @@
+---
+title: 'QuestDB'
+author: Taras Novak (@RandomFractals)
+format:
+  html:
+    code-copy: true
+    code-fold: true
+    code-summary: 'code'
+    code-tools: true
+---
+
+[QuestDB](https://github.com/questdb/questdb) is a high-performance, open-source SQL database for applications in financial services, IoT, machine learning, DevOps and observability. It includes endpoints for PostgreSQL wire protocol, high-throughput schema-agnostic ingestion using InfluxDB Line Protocol, and a REST API for queries, bulk imports, and exports.
+
+```{ojs}
+toc()
+```
+## QuestDB Client
+
+We'll use [QuestDB](https://observablehq.com/@observablehq/questdb?collection=@observablehq/database-clients) Observable [DatabaseClient](https://observablehq.com/@observablehq/database-client-specification) implementation to connect to the [QuestDB demo](https://demo.questdb.io/) database instance and run [QuestDB SQL](https://questdb.io/docs/concept/sql-execution-order) queries:
+
+```{ojs}
+db = new QuestDatabaseClient("https://demo.questdb.io")
+```
+
+## Database Tables
+
+QuestDB [`SHOW`](https://questdb.io/docs/reference/sql/show) SQL lists database tables and columns:
+
+```{ojs}
+sql`SHOW TABLES`;
+
+tables = db.sql(['SHOW TABLES;'])
+```
+
+## Table Columns
+
+*Select table:*
+
+```{ojs}
+viewof table = Inputs.select(tables.map(table => table.table)
+  // filter out system tables
+  .filter(tableName => tableName !== 'sys.column_versions_purge_log')
+  .sort().reverse(),
+  {
+    label: md`## Table`
+  })
+
+Inputs.table(tableColumns)
+
+tableColumns = db.sql([`SHOW COLUMNS FROM ${table};`])
+```
+
+## Table Summary
+
+Table summary of the max last ${rowLimit} rows from the `${table}` table using [Summary Table](https://observablehq.com/@observablehq/summary-table) Observable cell:
+
+```{ojs}
+viewof rowLimit = Inputs.select([1000, 10000, 50000], {label: 'Row Limit:'})
+
+viewof tableSummary = SummaryTable(data, {label: table})
+```
+
+## Table Data
+
+**${table}**
+
+```{ojs}
+viewof searchResults = Inputs.search(data)
+
+Inputs.table(searchResults)
+
+data = db.sql([`SELECT * FROM ${table} LIMIT -${rowLimit}`])
+```
+
+## Data Wrangler
+
+Query and transform QuestDB `${table}` data with [Arquero](https://uwdata.github.io/arquero/) in Observable [Data Wrangler](https://observablehq.com/@observablehq/data-wrangler) cell with auto-generated JS data transformations code:
+
+```{ojs}
+viewof queryEditor = Wrangler(data)
+```
+
+## Table Data SQL
+
+Query QuestDB tables with Observable [SQL cell](https://observablehq.com/@observablehq/sql-cell):
+
+```{ojs}
+sql`SELECT * FROM weather LIMIT -1000`;
+```
+
+**tip:** use [QuestDB SQL](https://questdb.io/docs/concept/sql-execution-order/) docs and tables diagram below to draft your SQL cell queries.
+
+## Tables Diagram
+
+[Graphviz](https://graphviz.org) tables diagram with table column names and column data types:
+
+**tip**: click on the `tablesDiagram` cell vertical ... menu below to download it in SVG or PNG format.
+
+```{ojs}
+tablesDiagram = diagram(db)
+```
+
+### [Mermaid ER Diagram](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram)
+
+TODO: get all the tables to show in this mermaid diagram as in the dot diagram above.
+
+```{ojs}
+mermaidTablesDiagram = mermaidDiagram(db)
+
+html`
+${DOM.download(await rasterize(mermaidTablesDiagram), `questdb-tables-diagram.png`, "Save as PNG")}
+${DOM.download(await serialize(mermaidTablesDiagram), `questdb-tables-diagram.svg`, "Save as SVG")}
+`
+
+async function mermaidDiagram(db) {
+  // get database tables and colulmns
+  const tables = await describe(db);
+  const tableColumns = await Promise.all(tables.map(table => db.sql([`SHOW COLUMNS FROM ${table};`])));
+
+  // create table nodes mermaid diagram string
+  const tableNodes = tables.map((table, index) =>
+    `${table} {
+      ${tableColumns[index].map((column) => `${column.column} ${column.type}`).join('\n')}
+    }`).join('\n');
+
+  return mermaid`erDiagram
+    ${tableNodes}
+  `;
+}
+
+async function diagram(db) {
+  // get database tables and colulmns
+  const tables = await describe(db);
+  const tableColumns = await Promise.all(tables.map(table => db.sql([`SHOW COLUMNS FROM ${table};`])));
+
+  // create table nodes dot diagram string with html table labels
+  const tableNodes = tables.map((table, index) =>
+    `"${table}" [shape=none, label=<
+    <table bgcolor="#cccccc" border="0" cellborder="0" cellspacing="1" cellpadding="3">
+      <tr>
+        <td colspan="2" bgcolor="skyblue">
+          <b>${table}</b>
+        </td>
+      </tr>${tableColumns[index].map((column) => `
+      <tr>
+        <td port="${column.column}" align="left" bgcolor="white">${column.column}</td>
+        <td align="left" bgcolor="white">${column.type}</td>
+      </tr>`).join('')}}
+    </table>
+    >]`).join('\n');
+
+  return dot`digraph Tables {
+    node [fontsize=12]
+    rankdir = LR;
+    ${tableNodes}
+  }`;
+}
+
+async function describe(db) {
+  // get database table names
+  return (await db.sql(['SHOW TABLES;'])).map(table => table.table) // table name
+    .filter(tableName => tableName !== 'sys.column_versions_purge_log') // skip system tables
+}
+
+function layout(layout) {
+  return function*(parts, ...args) {
+    yield html`<div>...loading...</div>`;
+
+    const str = parts
+      .map((s, i) => s + (i < args.length ? args[i] : ""))
+      .join("");
+    yield graphviz.layout(str, "svg", layout).then(svg => {
+      return html`<div>${svg}</div>`;
+    });
+  };
+}
+
+dot = layout('neato')
+```
+
+## Appendix
+
+```{ojs}
+import {toc} from '@nebrius/indented-toc'
+
+import {QuestDatabaseClient} from '@observablehq/questdb'
+
+import {SummaryTable} from '@observablehq/summary-table'
+
+import { aq, op } from '@uwdata/arquero'
+
+ import {Wrangler, op} from "@observablehq/data-wrangler"
+
+import {rasterize, serialize} from '@mbostock/saving-svg'
+
+graphviz = {
+  const path = await require.resolve("@hpcc-js/wasm");
+  const hpccWasm = await require(path);
+  //  Setting wasmFolder is not typically needed ---
+  const pathParts = path.split("/");
+  pathParts.pop();
+  hpccWasm.wasmFolder(pathParts.join("/"));
+  return hpccWasm.graphviz;
+}
+```
