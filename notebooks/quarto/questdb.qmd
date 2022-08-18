@@ -183,6 +183,8 @@ dot = layout('neato')
 ```{ojs}
 import {toc} from '@nebrius/indented-toc'
 
+import {sql} from '@cmudig/highlighter'
+
 import {QuestDatabaseClient} from '@observablehq/questdb'
 
 import {SummaryTable} from '@observablehq/summary-table'

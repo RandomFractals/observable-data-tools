@@ -184,13 +184,15 @@ md`
 
 import {toc} from '@nebrius/indented-toc'
 
+import {sql} from '@cmudig/highlighter'
+
 import {QuestDatabaseClient} from '@observablehq/questdb'
 
 import {SummaryTable} from '@observablehq/summary-table'
 
 import { aq, op } from '@uwdata/arquero'
 
- import {Wrangler, op} from "@observablehq/data-wrangler"
+import {Wrangler, op} from "@observablehq/data-wrangler"
 
 import {rasterize, serialize} from '@mbostock/saving-svg'
 

@@ -1,4 +1,3 @@
-
 # QuestDB
 
 [QuestDB](https://github.com/questdb/questdb) is a high-performance, open-source SQL database for applications in financial services, IoT, machine learning, DevOps and observability. It includes endpoints for PostgreSQL wire protocol, high-throughput schema-agnostic ingestion using InfluxDB Line Protocol, and a REST API for queries, bulk imports, and exports.
@@ -154,6 +153,8 @@ dot = layout('neato')
 ## Appendix
 ```
 import {toc} from '@nebrius/indented-toc'
+
+import {sql} from '@cmudig/highlighter'
 
 import {QuestDatabaseClient} from '@observablehq/questdb'
 
