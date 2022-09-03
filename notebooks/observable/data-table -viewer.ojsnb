@@ -1,0 +1,307 @@
+{
+    "id": "d5a4b7a41937a0af",
+    "slug": "data-table-viewer",
+    "trashed": false,
+    "description": "",
+    "likes": 5,
+    "publish_level": "public",
+    "forks": 1,
+    "fork_of": null,
+    "update_time": "2022-08-15T10:30:56.641Z",
+    "publish_time": "2021-07-30T10:49:48.778Z",
+    "publish_version": 129,
+    "latest_version": 129,
+    "thumbnail": "66bf29f2b6cdeff4917658ce7ca868aa256cee99bce11126d7374c98056a759c",
+    "default_thumbnail": "66bf29f2b6cdeff4917658ce7ca868aa256cee99bce11126d7374c98056a759c",
+    "roles": [],
+    "sharing": null,
+    "owner": {
+        "id": "17b72db66175b428",
+        "github_login": "RandomFractals",
+        "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+        "login": "randomfractals",
+        "name": "Taras Novak",
+        "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+        "home_url": "https://www.linkedin.com/in/tarasnovak",
+        "type": "individual",
+        "tier": "basic"
+    },
+    "creator": {
+        "id": "17b72db66175b428",
+        "github_login": "RandomFractals",
+        "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+        "login": "randomfractals",
+        "name": "Taras Novak",
+        "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+        "home_url": "https://www.linkedin.com/in/tarasnovak",
+        "tier": "basic"
+    },
+    "authors": [
+        {
+            "id": "17b72db66175b428",
+            "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+            "name": "Taras Novak",
+            "login": "randomfractals",
+            "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+            "home_url": "https://www.linkedin.com/in/tarasnovak",
+            "github_login": "RandomFractals",
+            "tier": "basic",
+            "approved": true,
+            "description": ""
+        }
+    ],
+    "collections": [
+        {
+            "id": "729de16217a66212",
+            "type": "public",
+            "slug": "tables",
+            "title": "Tables",
+            "description": "Tabular data tools and diagraming notebooks.",
+            "update_time": "2022-08-03T12:29:41.521Z",
+            "pinned": false,
+            "ordered": false,
+            "custom_thumbnail": null,
+            "default_thumbnail": "05d4135745e128d1628ad6e5022ad4918935363d56623b1bc583c96cf97766bb",
+            "thumbnail": "05d4135745e128d1628ad6e5022ad4918935363d56623b1bc583c96cf97766bb",
+            "listing_count": 14,
+            "parent_collection_count": 0,
+            "owner": {
+                "id": "17b72db66175b428",
+                "github_login": "RandomFractals",
+                "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+                "login": "randomfractals",
+                "name": "Taras Novak",
+                "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+                "home_url": "https://www.linkedin.com/in/tarasnovak",
+                "type": "individual",
+                "tier": "basic"
+            }
+        },
+        {
+            "id": "3a2bf0501500f229",
+            "type": "public",
+            "slug": "plot",
+            "title": "Plot",
+            "description": "Notebooks using new Plot library",
+            "update_time": "2021-06-08T11:51:15.611Z",
+            "pinned": false,
+            "ordered": true,
+            "custom_thumbnail": null,
+            "default_thumbnail": "86d3b4e977fabada222a78547b3add92c12b059b9587eaaaf54c8e0536629e35",
+            "thumbnail": "86d3b4e977fabada222a78547b3add92c12b059b9587eaaaf54c8e0536629e35",
+            "listing_count": 8,
+            "parent_collection_count": 0,
+            "owner": {
+                "id": "17b72db66175b428",
+                "github_login": "RandomFractals",
+                "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+                "login": "randomfractals",
+                "name": "Taras Novak",
+                "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+                "home_url": "https://www.linkedin.com/in/tarasnovak",
+                "type": "individual",
+                "tier": "basic"
+            }
+        },
+        {
+            "id": "17ac85a9b2655bcc",
+            "type": "public",
+            "slug": "observable-notebooks",
+            "title": "Observable Notebooks",
+            "description": "Observable API Notebooks",
+            "update_time": "2018-09-26T12:50:07.535Z",
+            "pinned": true,
+            "ordered": false,
+            "custom_thumbnail": null,
+            "default_thumbnail": "66bf29f2b6cdeff4917658ce7ca868aa256cee99bce11126d7374c98056a759c",
+            "thumbnail": "66bf29f2b6cdeff4917658ce7ca868aa256cee99bce11126d7374c98056a759c",
+            "listing_count": 7,
+            "parent_collection_count": 0,
+            "owner": {
+                "id": "17b72db66175b428",
+                "github_login": "RandomFractals",
+                "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+                "login": "randomfractals",
+                "name": "Taras Novak",
+                "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+                "home_url": "https://www.linkedin.com/in/tarasnovak",
+                "type": "individual",
+                "tier": "basic"
+            }
+        },
+        {
+            "id": "e98ed8165d46a2a7",
+            "type": "public",
+            "slug": "apache-arrow",
+            "title": "Apache Arrow",
+            "description": "",
+            "update_time": "2018-09-13T18:15:31.921Z",
+            "pinned": true,
+            "ordered": false,
+            "custom_thumbnail": null,
+            "default_thumbnail": "66bf29f2b6cdeff4917658ce7ca868aa256cee99bce11126d7374c98056a759c",
+            "thumbnail": "66bf29f2b6cdeff4917658ce7ca868aa256cee99bce11126d7374c98056a759c",
+            "listing_count": 8,
+            "parent_collection_count": 0,
+            "owner": {
+                "id": "17b72db66175b428",
+                "github_login": "RandomFractals",
+                "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+                "login": "randomfractals",
+                "name": "Taras Novak",
+                "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+                "home_url": "https://www.linkedin.com/in/tarasnovak",
+                "type": "individual",
+                "tier": "basic"
+            }
+        }
+    ],
+    "files": [],
+    "comments": [],
+    "commenting_lock": null,
+    "suggestion_from": null,
+    "suggestions_to": [],
+    "version": 129,
+    "title": "Data Table Viewer",
+    "license": null,
+    "copyright": "",
+    "nodes": [
+        {
+            "id": 0,
+            "value": "md`# Data Table Viewer\n\nUse this Data Table 🈸 Viewer 📓 to view sample datasets or preview any public\n[Apache Arrow](https://observablehq.com/@randomfractals/apache-arrow), \n**CSV**, [**GeoJSON**](https://www.rfc-editor.org/rfc/rfc7946.html) or **JSON array** data. Just paste your data url to fetch it. \n\nAlso, try [Data Table](https://github.com/RandomFractals/vscode-data-table) 🈸 notebook 📓 cell ⌗ output renderer extension in [VSCode Notebooks](https://marketplace.visualstudio.com/search?target=VSCode&category=Notebooks&sortBy=Installs) 📚.\n`",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 19,
+            "value": "viewof dataSet = Inputs.select(dataSets, {\n  label: html`<b>dataset</b>`\n})",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 22,
+            "value": "viewof dataUrl = Inputs.text({\n  label: html`<b>dataUrl</b>`,\n  placeholder: 'type data url and click fetch', \n  value: `${dataUrlParam ? dataUrlParam : 'https://raw.githubusercontent.com/vega/vega-datasets/master/data/' + dataSet}`,\n  submit: 'fetchData'\n})",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 24,
+            "value": "shareLink = md `*share a link to your [data](https://observablehq.com/@randomfractals/data-table-viewer?dataUrl=${dataUrl})*`",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 59,
+            "value": "viewof dataSummaryView = SummaryTable(data)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 123,
+            "value": "viewof dataSearchResults = Inputs.search(data)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 47,
+            "value": "tableView = Inputs.table(dataSearchResults)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 48,
+            "value": "data = fetchData(dataUrl)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 29,
+            "value": "dataUrlParam = new URLSearchParams(html`<a href>`.search).get('dataUrl')",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 36,
+            "value": "dataSets = [\n  'airports.csv', 'co2-concentration.csv', 'disasters.csv', 'flights-3m.csv', 'flights-airport.csv',\n  'gapminder-health-income.csv', 'github.csv', 'iowa-electricity.csv', 'la-riots.csv', 'lookup_groups.csv',\n  'lookup_people.csv', 'population_engineers_hurricanes.csv', 'seattle-temps.csv', 'seattle-weather.csv',\n  'sf-temps.csv', 'sp500.csv', 'stocks.csv', 'us-employment.csv', 'weather.csv', 'windvectors.csv', 'zipcodes.csv',\n  'barley.json', 'birdstrikes.json', 'budget.json', 'budgets.json', 'burtin.json', 'cars.json', 'climate.json',\n  'countries.json', 'crimea.json', 'driving.json', 'flare-dependencies.json', 'flare.json', \n  'flights-2k.json', 'flights-5k.json', 'flights-10k.json', 'flights-20k.json', \n  'flights-200k.json', 'flights-200k.arrow',\n  'gapminder.json', 'income.json', 'iris.json', 'jobs.json', 'londonCentroids.json',\n  'monarchs.json', 'movies.json', 'normal-2d.json', 'points.json',\n  'udistrict.json', 'unemployment-across-industries.json', 'us-state-capitals.json',\n  'weball26.json', 'wheat.json'\n]",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 41,
+            "value": "async function fetchData(dataUrl) {\n  let data = [];\n  console.log('fetchData:dataUrl:', dataUrl);\n  if (dataUrl.endsWith('.csv')) {\n    data = await d3.csvParse(await d3.text(dataUrl), d3.autoType);\n  } \n  else if (dataUrl.endsWith('.json') || dataUrl.endsWith('.geojson')) {\n    data = await d3.json(dataUrl);\n    if (data.features) {\n      data = flattenGeoData(data);\n    }\n  }\n  else if (dataUrl.endsWith('.arrow')) {\n    data = loadArrowData(dataUrl);\n  }\n  return data;\n}",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 80,
+            "value": "function flattenGeoData(data) {\n  if (data.features) {\n    const features = data.features.map(feature => {\n      let geometry = {};\n      Object.keys(feature?.geometry).forEach(key => {\n        geometry[`geometry.${key}`] = feature.geometry[key];\n      });\n      let properties = {};\n      Object.keys(feature?.properties).forEach(key => {\n        properties[`${key}`] = feature.properties[key];\n      });\n      const {geometry: g, properties: p, ...restOfKeys} = feature;\n      return {...restOfKeys, ...properties, ...geometry};\n    });\n    return features;\n  }\n  return data;\n}",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 43,
+            "value": "async function loadArrowData(dataUrl){\n  const response = await fetch(dataUrl);\n  const arrayBuffer = await response.arrayBuffer();\n  const table = arrow.Table.from(new Uint8Array(arrayBuffer));\n  const rows = Array(table.length);\n  const fields = table.schema.fields.map(d => d.name);  \n  for (let i=0, n=rows.length; i<n; ++i) {\n    const proto = {};\n    fields.forEach((fieldName, index) => {\n      const column = table.getColumnAt(index);\n      proto[fieldName] = column.get(i);\n    });\n    rows[i] = proto;\n  }\n  return rows;\n}",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 93,
+            "value": "tableStyles = html `\n<style>\n/* add space for sort direction symbol */\nthead th span {\n  margin-left: 0 !important;\n  padding-right: 0.4rem;\n}\n</style>`",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 7,
+            "value": "md`## Imports`",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 54,
+            "value": "import {SummaryTable} from \"@observablehq/summary-table\"",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 17,
+            "value": "arrow = require('apache-arrow@6.0.1')",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        }
+    ],
+    "resolutions": []
+}
