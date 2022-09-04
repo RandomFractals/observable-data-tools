@@ -1,0 +1,350 @@
+{
+    "id": "d00e01525b124dc5",
+    "slug": "data-package",
+    "trashed": false,
+    "description": "",
+    "likes": 4,
+    "publish_level": "public",
+    "forks": 0,
+    "fork_of": {
+        "id": "ee9e4fb45c009de1",
+        "slug": "search-table",
+        "title": "Search + Table",
+        "owner": {
+            "id": "f35c755083683fe5",
+            "avatar_url": "https://avatars.observableusercontent.com/avatar/5a51c3b908225a581d20577e488e2aba8cbc9541c52982c638638c370c3e5e8e",
+            "login": "observablehq",
+            "name": "Observable",
+            "bio": "Use data to think, together.",
+            "home_url": "https://observablehq.com",
+            "type": "team",
+            "tier": "enterprise"
+        },
+        "version": 16
+    },
+    "update_time": "2022-08-18T09:10:01.051Z",
+    "publish_time": "2022-01-28T14:39:27.328Z",
+    "publish_version": 398,
+    "latest_version": 398,
+    "thumbnail": "2ab8164f416f926f0b1f66612957693614029b213ab0ad8e36b31c292804cb64",
+    "default_thumbnail": "2ab8164f416f926f0b1f66612957693614029b213ab0ad8e36b31c292804cb64",
+    "roles": [],
+    "sharing": null,
+    "owner": {
+        "id": "17b72db66175b428",
+        "github_login": "RandomFractals",
+        "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+        "login": "randomfractals",
+        "name": "Taras Novak",
+        "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+        "home_url": "https://www.linkedin.com/in/tarasnovak",
+        "type": "individual",
+        "tier": "basic"
+    },
+    "creator": {
+        "id": "17b72db66175b428",
+        "github_login": "RandomFractals",
+        "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+        "login": "randomfractals",
+        "name": "Taras Novak",
+        "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+        "home_url": "https://www.linkedin.com/in/tarasnovak",
+        "tier": "basic"
+    },
+    "authors": [
+        {
+            "id": "17b72db66175b428",
+            "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+            "name": "Taras Novak",
+            "login": "randomfractals",
+            "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+            "home_url": "https://www.linkedin.com/in/tarasnovak",
+            "github_login": "RandomFractals",
+            "tier": "basic",
+            "approved": true,
+            "description": ""
+        }
+    ],
+    "collections": [
+        {
+            "id": "729de16217a66212",
+            "type": "public",
+            "slug": "tables",
+            "title": "Tables",
+            "description": "Tabular data tools and diagraming notebooks.",
+            "update_time": "2022-08-03T12:29:41.521Z",
+            "pinned": false,
+            "ordered": false,
+            "custom_thumbnail": null,
+            "default_thumbnail": "05d4135745e128d1628ad6e5022ad4918935363d56623b1bc583c96cf97766bb",
+            "thumbnail": "05d4135745e128d1628ad6e5022ad4918935363d56623b1bc583c96cf97766bb",
+            "listing_count": 14,
+            "parent_collection_count": 0,
+            "owner": {
+                "id": "17b72db66175b428",
+                "github_login": "RandomFractals",
+                "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+                "login": "randomfractals",
+                "name": "Taras Novak",
+                "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+                "home_url": "https://www.linkedin.com/in/tarasnovak",
+                "type": "individual",
+                "tier": "basic"
+            }
+        },
+        {
+            "id": "208e8c0c1e7b42d3",
+            "type": "public",
+            "slug": "datapackage",
+            "title": "Datapackage",
+            "description": "Collection of Frictionless Data notebooks",
+            "update_time": "2022-07-06T17:26:14.883Z",
+            "pinned": false,
+            "ordered": true,
+            "custom_thumbnail": null,
+            "default_thumbnail": "2ab8164f416f926f0b1f66612957693614029b213ab0ad8e36b31c292804cb64",
+            "thumbnail": "2ab8164f416f926f0b1f66612957693614029b213ab0ad8e36b31c292804cb64",
+            "listing_count": 6,
+            "parent_collection_count": 0,
+            "owner": {
+                "id": "17b72db66175b428",
+                "github_login": "RandomFractals",
+                "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+                "login": "randomfractals",
+                "name": "Taras Novak",
+                "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+                "home_url": "https://www.linkedin.com/in/tarasnovak",
+                "type": "individual",
+                "tier": "basic"
+            }
+        }
+    ],
+    "files": [],
+    "comments": [],
+    "commenting_lock": null,
+    "suggestion_from": null,
+    "suggestions_to": [],
+    "version": 398,
+    "title": "Data Package 📦",
+    "license": null,
+    "copyright": "",
+    "nodes": [
+        {
+            "id": 4,
+            "value": "# Data Package 📦\n\nView <a href=\"https://specs.frictionlessdata.io/data-package/\" target=\"_blank\" title=\"Data Package Specification\">Frictionless Data Package</a> **tabular** data resources with <a href=\"https://github.com/frictionlessdata/datapackage-js\" target=\"_blank\" title=\"Data Hub\">datapackage JS</a> library.\n\nSample datasets from: <a href=\"https://github.com/datasets\" target=\"_blank\" title=\"Data Packaged Core Datasets\">https://github.com/datasets</a>.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 291,
+            "value": "## Data Package 📦\n\nSelect a data package to view resources:",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 171,
+            "value": "viewof dataPackageName = Inputs.select(dataPackageNames, {\n  label: html`<b>Datapackage</b>`\n})",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 244,
+            "value": "dataRepositoryLink = md `**Repository** &nbsp; ⟶ [datasets/${dataPackageName}](https://github.com/datasets/${dataPackageName})`",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 203,
+            "value": "viewof dataPackageUrl = Inputs.text({\n  label: html`<b>Datapackage Url</b>`,\n  placeholder: 'type data url and click fetch', \n  value: `${dataPackageUrlParam ? dataPackageUrlParam : `https://raw.githubusercontent.com/datasets/${dataPackageName}/master/datapackage.json`}`,\n  submit: 'fetchData'\n})",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 193,
+            "value": "shareLink = md `*share a link to this [datapackage notebook](https://observablehq.com/@randomfractals/data-package?dataPackageUrl=${dataPackageUrl})*`",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 282,
+            "value": "dataPackageInfo = fetch(dataPackageUrl).then(response => response.json())",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 303,
+            "value": "### ${dataPackageInfo.title}\n\n${dataPackageInfo.description ? dataPackageInfo.description : ''}",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 286,
+            "value": "### Resources",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 54,
+            "value": "viewof resourceName = Inputs.select(dataPackage.resourceNames.filter(resourceName => resourceName !== 'validation_report'), {\n  label: html`<b>Resource</b>`\n})",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 75,
+            "value": "resourceTable = Inputs.table([resourceInfo.descriptor], {\n  format: {\n    datahub: d => d.type\n  }\n})",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 271,
+            "value": "resourceLink = md`**${resourceInfo.descriptor.path}**`",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 6,
+            "value": "viewof searchResults = Inputs.search(resourceData)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 7,
+            "value": "Inputs.table(searchResults)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 122,
+            "value": "resourceData = {\n  if (resource.tabular) {\n    return await resource.read({keyed: true})\n  }\n  return [];\n}",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 42,
+            "value": "## Data Package API",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 197,
+            "value": "dataPackageUrlParam = new URLSearchParams(html`<a href>`.search).get('dataPackageUrl')",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 393,
+            "value": "dataPackageNames = [\n  'world-cities',\n  'country-codes',\n  'geo-countries',\n  'geoip2-ipv4',\n  'fips-10-4',\n  'un-locode',\n  'airport-codes',\n  'language-codes',\n  'population',\n  'population-city',\n  'gdp',\n  'gdp-uk',\n  'gdp-us',\n  'cash-surplus-deficit',\n  'dac-and-crs-code-lists',\n  'unece-units-of-measure',\n  'currency-codes',\n  's-and-p-500-companies',\n  'nasdaq-listings',\n  'nyse-other-listings',\n  'finance-vix',\n  'cpi',\n  'cpi-us',\n  'exchange-rates',\n  'employment-us',\n  'house-prices-us',\n  'house-prices-uk',\n  'house-prices-global',\n  'household-income-us-historical',\n  'oil-prices',\n  'natural-gas',\n  'expenditure-on-research-and-development',\n  'usa-education-budget-analysis',\n  'pharmaceutical-drug-spending',\n  'genome-sequencing-costs',\n  'covid-19',\n  'iso-container-codes',\n  'global-temp',\n  'global-temp-anomalies',\n  'co2-ppm',\n  'co2-fossil-by-nation',\n  'top-level-domain-names',\n  'unicode-emojis',\n  'registry'\n]",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 33,
+            "value": "dataPackage = fetchData(dataPackageUrl)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 38,
+            "value": "resourceNames = dataPackage.resourceNames.filter(resourceName => resourceName !== 'validation_report')",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 36,
+            "value": "resources = dataPackage.resources",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 275,
+            "value": "resourceUrl = `${resourceInfo._basePath}/${resourceInfo.descriptor.path}`",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 139,
+            "value": "resourceInfo = dataPackage.getResource(resourceName)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 133,
+            "value": "resource = DataPackage.Resource.load({path: resourceUrl})",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 260,
+            "value": "async function fetchData(dataPackageUrl) {\n  return await DataPackage.Package.load(dataPackageUrl);\n}",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 19,
+            "value": "## Imports",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 23,
+            "value": "DataPackage = require('https://unpkg.com/datapackage@1.1.10/dist/datapackage.min.js')",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        }
+    ],
+    "resolutions": []
+}
