@@ -1,0 +1,538 @@
+{
+    "id": "cf0741022725717f",
+    "slug": "questdb",
+    "trashed": false,
+    "description": "",
+    "likes": 0,
+    "publish_level": "public",
+    "forks": 0,
+    "fork_of": null,
+    "update_time": "2022-07-28T12:38:28.200Z",
+    "publish_time": "2022-07-15T12:35:07.892Z",
+    "publish_version": 290,
+    "latest_version": 290,
+    "thumbnail": "045d57e03d9f221066c08640ee65c887cbcccac4431d319740e74adeb9c9e4f6",
+    "default_thumbnail": "045d57e03d9f221066c08640ee65c887cbcccac4431d319740e74adeb9c9e4f6",
+    "roles": [],
+    "sharing": null,
+    "owner": {
+        "id": "17b72db66175b428",
+        "github_login": "RandomFractals",
+        "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+        "login": "randomfractals",
+        "name": "Taras Novak",
+        "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+        "home_url": "https://www.linkedin.com/in/tarasnovak",
+        "type": "individual",
+        "tier": "basic"
+    },
+    "creator": {
+        "id": "17b72db66175b428",
+        "github_login": "RandomFractals",
+        "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+        "login": "randomfractals",
+        "name": "Taras Novak",
+        "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+        "home_url": "https://www.linkedin.com/in/tarasnovak",
+        "tier": "basic"
+    },
+    "authors": [
+        {
+            "id": "17b72db66175b428",
+            "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+            "name": "Taras Novak",
+            "login": "randomfractals",
+            "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+            "home_url": "https://www.linkedin.com/in/tarasnovak",
+            "github_login": "RandomFractals",
+            "tier": "basic",
+            "approved": true,
+            "description": ""
+        }
+    ],
+    "collections": [
+        {
+            "id": "729de16217a66212",
+            "type": "public",
+            "slug": "tables",
+            "title": "Tables",
+            "description": "Tabular data tools and diagraming notebooks.",
+            "update_time": "2022-08-03T12:29:41.521Z",
+            "pinned": false,
+            "ordered": false,
+            "custom_thumbnail": null,
+            "default_thumbnail": "05d4135745e128d1628ad6e5022ad4918935363d56623b1bc583c96cf97766bb",
+            "thumbnail": "05d4135745e128d1628ad6e5022ad4918935363d56623b1bc583c96cf97766bb",
+            "listing_count": 14,
+            "parent_collection_count": 0,
+            "owner": {
+                "id": "17b72db66175b428",
+                "github_login": "RandomFractals",
+                "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+                "login": "randomfractals",
+                "name": "Taras Novak",
+                "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+                "home_url": "https://www.linkedin.com/in/tarasnovak",
+                "type": "individual",
+                "tier": "basic"
+            }
+        }
+    ],
+    "files": [],
+    "comments": [],
+    "commenting_lock": null,
+    "suggestion_from": null,
+    "suggestions_to": [],
+    "version": 290,
+    "title": "QuestDB",
+    "license": "mit",
+    "copyright": "Copyright 2022 Random Fractals Inc.",
+    "nodes": [
+        {
+            "id": 0,
+            "value": "# QuestDB\n\n[QuestDB](https://github.com/questdb/questdb) is a high-performance, open-source SQL database for applications in financial services, IoT, machine learning, DevOps and observability. It includes endpoints for PostgreSQL wire protocol, high-throughput schema-agnostic ingestion using InfluxDB Line Protocol, and a REST API for queries, bulk imports, and exports.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 280,
+            "value": "toc()",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 283,
+            "value": "## QuestDB Client",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 17,
+            "value": "We'll use [QuestDB](https://observablehq.com/@observablehq/questdb?collection=@observablehq/database-clients) Observable [DatabaseClient](https://observablehq.com/@observablehq/database-client-specification) implementation to connect to the [QuestDB demo](https://demo.questdb.io/) database instance and run [QuestDB SQL](https://questdb.io/docs/concept/sql-execution-order) queries:",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 11,
+            "value": "db = new QuestDatabaseClient(\"https://demo.questdb.io\")",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 60,
+            "value": "## Database Tables\n\nQuestDB [`SHOW`](https://questdb.io/docs/reference/sql/show) SQL lists database tables and columns:",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 13,
+            "value": "SHOW TABLES",
+            "pinned": true,
+            "mode": "sql",
+            "data": {
+                "ui": {
+                    "showCharts": true
+                },
+                "source": {
+                    "name": "db",
+                    "type": "cell",
+                    "dialect": "sql"
+                }
+            },
+            "name": ""
+        },
+        {
+            "id": 36,
+            "value": "tables = db.sql(['SHOW TABLES;'])",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 32,
+            "value": "## Table Columns\n\n*Select table:*",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 30,
+            "value": "viewof table = Inputs.select(tables.map(table => table.table)\n  // filter out system tables\n  .filter(tableName => tableName !== 'sys.column_versions_purge_log')\n  .sort().reverse(), \n  {\n    label: md`## Table`\n  })",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 53,
+            "value": "Inputs.table(tableColumns)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 64,
+            "value": "tableColumns = db.sql([`SHOW COLUMNS FROM ${table};`])",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 69,
+            "value": "## Table Summary\n\nTable summary of the max last ${rowLimit} rows from the `${table}` table using [Summary Table](https://observablehq.com/@observablehq/summary-table) Observable cell:",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 152,
+            "value": "viewof rowLimit = Inputs.select([1000, 10000, 50000], {label: 'Row Limit:'})",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 90,
+            "value": "viewof tableSummary = SummaryTable(data, {label: table})",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 98,
+            "value": "## Table Data\n\n**${table}**",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 103,
+            "value": "viewof searchResults = Inputs.search(data)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 105,
+            "value": "Inputs.table(searchResults)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 85,
+            "value": "data = db.sql([`SELECT * FROM ${table} LIMIT -${rowLimit}`])",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 114,
+            "value": "## Data Wrangler\n\nQuery and transform QuestDB `${table}` data with [Arquero](https://uwdata.github.io/arquero/) in Observable [Data Wrangler](https://observablehq.com/@observablehq/data-wrangler) cell with auto-generated JS data transformations code:",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 131,
+            "value": "viewof queryEditor = Wrangler(data)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 159,
+            "value": "## Table Data SQL\n\nQuery QuestDB tables with Observable [SQL cell](https://observablehq.com/@observablehq/sql-cell):",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 162,
+            "value": "SELECT * FROM weather LIMIT -1000",
+            "pinned": true,
+            "mode": "sql",
+            "data": {
+                "ui": {
+                    "showCharts": true
+                },
+                "source": {
+                    "name": "db",
+                    "type": "cell",
+                    "dialect": "sql"
+                }
+            },
+            "name": ""
+        },
+        {
+            "id": 268,
+            "value": "**tip:** use [QuestDB SQL](https://questdb.io/docs/concept/sql-execution-order/) docs and tables diagram below to draft your SQL cell queries.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 178,
+            "value": "## Tables Diagram\n\n[Graphviz](https://graphviz.org) tables diagram with table column names and column data types:\n\n**tip**: click on the `tablesDiagram` cell vertical ... menu below to download it in SVG or PNG format.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 191,
+            "value": "tablesDiagram = diagram(db)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 243,
+            "value": "### [Mermaid ER Diagram](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram)\n\nTODO: get all the tables to show in this mermaid diagram as in the dot diagram above.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 247,
+            "value": "mermaidTablesDiagram = mermaidDiagram(db)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 257,
+            "value": "html`\n${DOM.download(await rasterize(mermaidTablesDiagram), `questdb-tables-diagram.png`, \"Save as PNG\")}\n${DOM.download(await serialize(mermaidTablesDiagram), `questdb-tables-diagram.svg`, \"Save as SVG\")}\n`",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 240,
+            "value": "async function mermaidDiagram(db) {\n  // get database tables and colulmns\n  const tables = await describe(db);\n  const tableColumns = await Promise.all(tables.map(table => db.sql([`SHOW COLUMNS FROM ${table};`])));\n\n  // create table nodes mermaid diagram string\n  const tableNodes = tables.map((table, index) =>\n    `${table} {\n      ${tableColumns[index].map((column) => `${column.column} ${column.type}`).join('\\n')}\n    }`).join('\\n');\n\n  return mermaid`erDiagram\n    ${tableNodes}\n  `;  \n}",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 189,
+            "value": "async function diagram(db) {\n  // get database tables and colulmns\n  const tables = await describe(db);\n  const tableColumns = await Promise.all(tables.map(table => db.sql([`SHOW COLUMNS FROM ${table};`])));\n\n  // create table nodes dot diagram string with html table labels\n  const tableNodes = tables.map((table, index) =>\n    `\"${table}\" [shape=none, label=<\n    <table bgcolor=\"#cccccc\" border=\"0\" cellborder=\"0\" cellspacing=\"1\" cellpadding=\"3\">\n      <tr>\n        <td colspan=\"2\" bgcolor=\"skyblue\">\n          <b>${table}</b>\n        </td>\n      </tr>${tableColumns[index].map((column) => `\n      <tr>\n        <td port=\"${column.column}\" align=\"left\" bgcolor=\"white\">${column.column}</td>\n        <td align=\"left\" bgcolor=\"white\">${column.type}</td>\n      </tr>`).join('')}}\n    </table>\n    >]`).join('\\n');\n\n  return dot`digraph Tables {\n    node [fontsize=12]\n    rankdir = LR;\n    ${tableNodes}\n  }`;\n}",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 233,
+            "value": "async function describe(db) {\n  // get database table names\n  return (await db.sql(['SHOW TABLES;'])).map(table => table.table) // table name\n    .filter(tableName => tableName !== 'sys.column_versions_purge_log') // skip system tables\n}",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 183,
+            "value": "function layout(layout) {\n  return function*(parts, ...args) {\n    yield html`<div>...loading...</div>`;\n\n    const str = parts\n      .map((s, i) => s + (i < args.length ? args[i] : \"\"))\n      .join(\"\");\n    yield graphviz.layout(str, \"svg\", layout).then(svg => {\n      return html`<div>${svg}</div>`;\n    });\n  };\n}",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 186,
+            "value": "dot = layout('neato')",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 5,
+            "value": "## Appendix",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 272,
+            "value": "import {toc} from '@nebrius/indented-toc'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 7,
+            "value": "import {QuestDatabaseClient} from '@observablehq/questdb'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 71,
+            "value": "import {SummaryTable} from '@observablehq/summary-table'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 116,
+            "value": "import { aq, op } from '@uwdata/arquero'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 121,
+            "value": " import {Wrangler, op} from \"@observablehq/data-wrangler\"",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 250,
+            "value": "import {rasterize, serialize} from '@mbostock/saving-svg'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 180,
+            "value": "graphviz = {\n  const path = await require.resolve(\"@hpcc-js/wasm\");\n  const hpccWasm = await require(path);\n  //  Setting wasmFolder is not typically needed ---\n  const pathParts = path.split(\"/\");\n  pathParts.pop();  \n  hpccWasm.wasmFolder(pathParts.join(\"/\"));\n  return hpccWasm.graphviz;\n}",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        }
+    ],
+    "resolutions": [
+        {
+            "type": "notebook",
+            "specifier": "@observablehq/questdb",
+            "value": "e29ad98f8fe44888@161"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@observablehq/summary-table",
+            "value": "253d3c1b5eb8410c@1935"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@mkfreeman/plot-tooltip",
+            "value": "67d1b2c32f1883c4@659"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@observablehq/plot-cheatsheets-marks",
+            "value": "d2dffac0e42406e8@3045"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@observablehq/cheatsheet-utilities",
+            "value": "794aa914fd015c9e@3360"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@nebrius/indented-toc",
+            "value": "9bed702f80a3797e@402"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@observablehq/plot-exploration-penguins",
+            "value": "32eeadb67cb4cbcb@1472"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@mbostock/pbcopy",
+            "value": "ab3e70b29c480e6d@83"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@zanarmstrong/highlight-color-w-dropdown",
+            "value": "8d6618bb2d7befdd@199"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@jashkenas/inputs",
+            "value": "e93997d5089d7165@2303"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@observablehq/plot-stack",
+            "value": "33bc32700f22adb1@885"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@john-guerra/file-input-with-default-value",
+            "value": "1371b3b2446a73b4@307"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@uwdata/arquero",
+            "value": "79750b3b8e929d9d@226"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@observablehq/data-wrangler",
+            "value": "6dcf44d762a0599e@4320"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@mbostock/copier",
+            "value": "ab3e70b29c480e6d@83"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@mbostock/saving-svg",
+            "value": "576f8943dbfbd395@114"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@d3/contours",
+            "value": "9d7cc1d26bcca7c7@267"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@d3/color-legend",
+            "value": "a33468b95d0b15b0@808"
+        }
+    ]
+}
