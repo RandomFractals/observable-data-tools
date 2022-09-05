@@ -1,0 +1,226 @@
+---
+title: 'Tabular Data Viewer'
+author: Taras Novak (@RandomFractals)
+format:
+  html:
+    code-copy: true
+    code-fold: true
+    code-summary: 'code'
+    code-tools: true
+---
+
+Use this [Tabular Data Viewer 中](https://twitter.com/hashtag/TabularDataViewer?src=hashtag_click) notebook 📓 to view sample datasets or preview any public
+[Apache Arrow](https://observablehq.com/@randomfractals/apache-arrow),
+**CSV**, or **JSON array** data with [Summary Table](https://observablehq.com/@observablehq/summary-table) and [Tabulator](http://tabulator.info/). Just paste your data url to fetch it.
+
+Also, try our [Data Table](https://github.com/RandomFractals/vscode-data-table/releases) 🈸 notebook 📓 cell ⌗ output renderer extension with [VSCode Notebooks](https://marketplace.visualstudio.com/search?target=VSCode&category=Notebooks&sortBy=Installs) 📚.
+
+```{ojs}
+viewof dataSet = Inputs.select(dataSets, {
+  label: html`<b>dataset</b>`
+})
+
+viewof dataUrl = Inputs.text({
+  label: html`<b>dataUrl</b>`,
+  placeholder: 'type data url and click fetch',
+  value: `${dataUrlParam ? dataUrlParam : 'https://raw.githubusercontent.com/vega/vega-datasets/master/data/' + dataSet}`,
+  submit: 'fetchData'
+})
+
+shareLink = md `*share a link to your [data](https://observablehq.com/@randomfractals/tabular-data-viewer?dataUrl=${dataUrl})*`
+
+viewof dataSummaryView = SummaryTable(data)
+```
+
+## Tabular Data View
+
+```{ojs}
+viewof tableOptions = Inputs.form([
+  Inputs.button('Download', {reduce: () => table.download('csv', 'data.csv')}),
+])
+
+tableContainer = html `<div id="table-container" style="height: 600px">
+</div>`
+
+table = new Tabulator('#table-container', {
+  height: 645,
+  autoColumns: true,
+  columnDefaults: {
+    headerMenu: columnHeaderMenu
+  },
+  clipboard: true, // eanble clipboard copy and paste
+  clipboardPasteAction: 'replace',
+  layout: tableLayout,
+  layoutColumnsOnNewData: true,
+  movableColumns: movableColumns,
+  movableRows: movableRows,
+  selectable: selectableRows,
+  rowContextMenu: rowContextMenu,
+  pagination: pagination,
+  paginationSize: paginationSize,
+  paginationSizeSelector: pageSizes,
+  renderVerticalBuffer: 300, // set virtual DOM buffer to 300px
+  debugInvalidOptions: true, // tabulator warnings
+  debugEventsExternal: ['tableBuilding', 'dataLoaded', 'tableBuilt'], // log specified tabulator events
+ 	data: data,
+  persistenceMode: 'local',
+  persistenceID: dataUrl,
+  persistentLayout: true,
+  persistence: {
+    sort: true,
+    filter: true,
+    group: true,
+    columns: true,
+  }
+});
+```
+
+### Table UX Tips
+- Hold **CTRL** or **Shift** key when clicking on column headers to **Sort** table data by multiple columns.
+- See [Clipboard](http://tabulator.info/docs/5.0/clipboard) options for the clipboard copy and paste data options.
+- Use row context menu to **Delete** or **Freeze** a row.
+
+## Table Toggles
+
+```{ojs}
+viewof tableLayout = Inputs.select(tableLayouts, {value: 'fitDataStretch', label: 'Table Layout'})
+
+viewof pagination = Inputs.toggle({label: 'Pagination', value: true})
+
+viewof paginationSize = Inputs.select(pageSizes, {value: 100000, label: 'Page Size'})
+
+viewof movableColumns = Inputs.toggle({label: 'Movable Columns', value: true})
+
+viewof movableRows = Inputs.toggle({label: 'Movable Rows', value: true})
+
+viewof selectableRows = Inputs.toggle({label: 'Selectable Rows', value: true})
+
+// from: http://tabulator.info/docs/5.0/layout
+tableLayouts = [
+  'fitData',
+  'fitDataFill',
+  'fitDataStretch',
+  'fitDataTable',
+  'fitColumns'
+]
+
+pageSizes = [20, 100, 1000, 10000, 100000, 1000000, 10000000]
+
+columnHeaderMenu = [
+  {
+    label: 'Hide Column',
+    action: function (e, column) {
+      column.hide();
+    }
+  },
+  {
+    label: "Freeze Column",
+    action: function (e, column) {
+      column.updateDefinition({ frozen: true });
+    }
+  },
+  {
+    label: 'Delete Column',
+    action: function (e, column) {
+      column.delete();
+    }
+  }
+];
+
+
+// row context menu. see: http://tabulator.info/docs/5.0/menu
+rowContextMenu = [
+  {
+    label: "<i class='fas fa-trash'></i> Delete Row",
+    action: function(e, row) {row.delete()}
+  },
+  {
+    label: "Freeze Row",
+    action: function (e, row) { row.freeze(); }
+  }
+]
+```
+
+## Data
+
+```{ojs}
+data = fetchData(dataUrl)
+
+dataUrlParam = new URLSearchParams(html`<a href>`.search).get('dataUrl')
+
+dataSets = [
+  'airports.csv', 'co2-concentration.csv', 'disasters.csv', 'flights-3m.csv', 'flights-airport.csv',
+  'gapminder-health-income.csv', 'github.csv', 'iowa-electricity.csv', 'la-riots.csv', 'lookup_groups.csv',
+  'lookup_people.csv', 'population_engineers_hurricanes.csv', 'seattle-temps.csv', 'seattle-weather.csv',
+  'sf-temps.csv', 'sp500.csv', 'stocks.csv', 'us-employment.csv', 'weather.csv', 'windvectors.csv', 'zipcodes.csv',
+  'barley.json', 'birdstrikes.json', 'budget.json', 'budgets.json', 'burtin.json', 'cars.json', 'climate.json',
+  'countries.json', 'crimea.json', 'driving.json', 'flare-dependencies.json', 'flare.json',
+  'flights-2k.json', 'flights-5k.json', 'flights-10k.json', 'flights-20k.json',
+  'flights-200k.json', 'flights-200k.arrow',
+  'gapminder.json', 'income.json', 'iris.json', 'jobs.json', 'londonCentroids.json',
+  'monarchs.json', 'movies.json', 'normal-2d.json', 'points.json',
+  'udistrict.json', 'unemployment-across-industries.json', 'us-state-capitals.json',
+  'weball26.json', 'wheat.json'
+]
+
+async function fetchData(dataUrl) {
+  let data = [];
+  if (dataUrl.endsWith('.csv')) {
+    data = await d3.csvParse(await d3.text(dataUrl), d3.autoType);
+  }
+  else if (dataUrl.endsWith('.json')) {
+    data = await d3.json(dataUrl);
+  }
+  else if (dataUrl.endsWith('.arrow')) {
+    data = loadArrowData(dataUrl);
+  }
+  return data;
+}
+
+async function loadArrowData(dataUrl){
+  const response = await fetch(dataUrl);
+  const arrayBuffer = await response.arrayBuffer();
+  const table = arrow.Table.from(new Uint8Array(arrayBuffer));
+  const rows = Array(table.length);
+  const fields = table.schema.fields.map(d => d.name);
+  for (let i=0, n=rows.length; i<n; ++i) {
+    const proto = {};
+    fields.forEach((fieldName, index) => {
+      const column = table.getColumnAt(index);
+      proto[fieldName] = column.get(i);
+    });
+    rows[i] = proto;
+  }
+  return rows;
+}
+```
+
+## Table Styles
+
+```{ojs}
+tableStyles = html `
+<style>
+/* add space for sort direction symbol */
+thead th span {
+  margin-left: 0 !important;
+  padding-right: 0.4rem;
+}
+
+.tabulator .tabulator-tableholder{
+  background-color: aliceblue;
+}
+</style>`
+
+html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
+tabulator.min.css`
+```
+
+## Imports
+
+```{ojs}
+import {SummaryTable} from "@observablehq/summary-table"
+
+Tabulator = require('https://unpkg.com/tabulator-tables@5.3.1');
+
+arrow = require('apache-arrow@6.0.1')
+```
