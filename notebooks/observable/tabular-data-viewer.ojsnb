@@ -106,46 +106,46 @@
     "nodes": [
         {
             "id": 0,
-            "value": "md`# Tabular Data Viewer 中\n\nUse this [Tabular Data Viewer 中](https://twitter.com/hashtag/TabularDataViewer?src=hashtag_click) notebook 📓 to view sample datasets or preview any public\n[Apache Arrow](https://observablehq.com/@randomfractals/apache-arrow), \n**CSV**, [**GeoJSON**](https://www.rfc-editor.org/rfc/rfc7946.html) or **JSON array** data with [Summary Table](https://observablehq.com/@observablehq/summary-table) and [Tabulator](http://tabulator.info/). Just paste your data url to fetch it. \n\nAlso, try our [Data Table](https://github.com/RandomFractals/vscode-data-table/releases) 🈸 notebook 📓 cell ⌗ output renderer extension with [VSCode Notebooks](https://marketplace.visualstudio.com/search?target=VSCode&category=Notebooks&sortBy=Installs) 📚.\n`",
+            "value": "# Tabular Data Viewer 中\r\n\r\nUse this [Tabular Data Viewer 中](https://twitter.com/hashtag/TabularDataViewer?src=hashtag_click) notebook 📓 to view sample datasets or preview any public\r\n[Apache Arrow](https://observablehq.com/@randomfractals/apache-arrow), \r\n**CSV**, [**GeoJSON**](https://www.rfc-editor.org/rfc/rfc7946.html) or **JSON array** data with [Summary Table](https://observablehq.com/@observablehq/summary-table) and [Tabulator](http://tabulator.info/). Just paste your data url to fetch it. \r\n\r\nAlso, try our [Data Table](https://github.com/RandomFractals/vscode-data-table/releases) 🈸 notebook 📓 cell ⌗ output renderer extension with [VSCode Notebooks](https://marketplace.visualstudio.com/search?target=VSCode&category=Notebooks&sortBy=Installs) 📚.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "name": ""
+        },
+        {
+            "id": 1,
+            "value": "viewof dataSet = Inputs.select(dataSets, {\r\n  label: html`<b>dataset</b>`\r\n})",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 19,
-            "value": "viewof dataSet = Inputs.select(dataSets, {\n  label: html`<b>dataset</b>`\n})",
+            "id": 2,
+            "value": "viewof dataUrl = Inputs.text({\r\n  label: html`<b>dataUrl</b>`,\r\n  placeholder: 'type data url and click fetch', \r\n  value: `${dataUrlParam ? dataUrlParam : 'https://raw.githubusercontent.com/vega/vega-datasets/master/data/' + dataSet}`,\r\n  submit: 'fetchData'\r\n})",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 22,
-            "value": "viewof dataUrl = Inputs.text({\n  label: html`<b>dataUrl</b>`,\n  placeholder: 'type data url and click fetch', \n  value: `${dataUrlParam ? dataUrlParam : 'https://raw.githubusercontent.com/vega/vega-datasets/master/data/' + dataSet}`,\n  submit: 'fetchData'\n})",
-            "pinned": false,
-            "mode": "js",
-            "data": null,
-            "name": null
-        },
-        {
-            "id": 24,
+            "id": 3,
             "value": "shareLink = md `*share a link to your [data](https://observablehq.com/@randomfractals/tabular-data-viewer?dataUrl=${dataUrl})*`",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 59,
+            "id": 4,
             "value": "viewof dataSummaryView = SummaryTable(data)",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 170,
+            "id": 5,
             "value": "## Tabular Data View",
             "pinned": false,
             "mode": "md",
@@ -153,31 +153,31 @@
             "name": ""
         },
         {
-            "id": 219,
-            "value": "viewof tableOptions = Inputs.form([\n  Inputs.button('Download', {reduce: () => table.download('csv', 'data.csv')}),\n])",
+            "id": 6,
+            "value": "viewof tableOptions = Inputs.form([\r\n  Inputs.button('Download', {reduce: () => table.download('csv', 'data.csv')}),\r\n])",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 131,
-            "value": "tableContainer = html `<div id=\"table-container\" style=\"height: 600px\">\n</div>`",
+            "id": 7,
+            "value": "tableContainer = html `<div id=\"table-container\" style=\"height: 600px\">\r\n</div>`",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 146,
-            "value": "table = new Tabulator('#table-container', {\n  height: 645,\n  autoColumns: true,\n  columnDefaults: {\n    headerMenu: columnHeaderMenu\n  },\n  clipboard: true, // eanble clipboard copy and paste\n  clipboardPasteAction: 'replace',\n  layout: tableLayout,\n  layoutColumnsOnNewData: true,\n  movableColumns: movableColumns,\n  movableRows: movableRows,\n  selectable: selectableRows,\n  rowContextMenu: rowContextMenu,\n  pagination: pagination,\n  paginationSize: paginationSize,\n  paginationSizeSelector: pageSizes,\n  renderVerticalBuffer: 300, // set virtual DOM buffer to 300px\n  debugInvalidOptions: true, // tabulator warnings\n  debugEventsExternal: ['tableBuilding', 'dataLoaded', 'tableBuilt'], // log specified tabulator events\n \tdata: data,\n  persistenceMode: 'local',\n  persistenceID: dataUrl,\n  persistentLayout: true,\n  persistence: {\n    sort: true,\n    filter: true,\n    group: true,\n    columns: true,\n  }\n});",
+            "id": 8,
+            "value": "table = new Tabulator('#table-container', {\r\n  height: 645,\r\n  autoColumns: true,\r\n  columnDefaults: {\r\n    headerMenu: columnHeaderMenu\r\n  },\r\n  clipboard: true, // eanble clipboard copy and paste\r\n  clipboardPasteAction: 'replace',\r\n  layout: tableLayout,\r\n  layoutColumnsOnNewData: true,\r\n  movableColumns: movableColumns,\r\n  movableRows: movableRows,\r\n  selectable: selectableRows,\r\n  rowContextMenu: rowContextMenu,\r\n  pagination: pagination,\r\n  paginationSize: paginationSize,\r\n  paginationSizeSelector: pageSizes,\r\n  renderVerticalBuffer: 300, // set virtual DOM buffer to 300px\r\n  debugInvalidOptions: true, // tabulator warnings\r\n  debugEventsExternal: ['tableBuilding', 'dataLoaded', 'tableBuilt'], // log specified tabulator events\r\n \tdata: data,\r\n  persistenceMode: 'local',\r\n  persistenceID: dataUrl,\r\n  persistentLayout: true,\r\n  persistence: {\r\n    sort: true,\r\n    filter: true,\r\n    group: true,\r\n    columns: true,\r\n  }\r\n});",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 238,
+            "id": 9,
             "value": "### Table UX Tips\n- Hold **CTRL** or **Shift** key when clicking on column headers to **Sort** table data by multiple columns.\n- See [Clipboard](http://tabulator.info/docs/5.0/clipboard) options for the clipboard copy and paste data options.\n- Use row context menu to **Delete** or **Freeze** a row.",
             "pinned": false,
             "mode": "md",
@@ -185,7 +185,7 @@
             "name": ""
         },
         {
-            "id": 201,
+            "id": 10,
             "value": "## Table Toggles",
             "pinned": false,
             "mode": "md",
@@ -193,87 +193,87 @@
             "name": ""
         },
         {
-            "id": 209,
+            "id": 11,
             "value": "viewof tableLayout = Inputs.select(tableLayouts, {value: 'fitDataStretch', label: 'Table Layout'})",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 297,
+            "id": 12,
             "value": "viewof pagination = Inputs.toggle({label: 'Pagination', value: true})",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 295,
+            "id": 13,
             "value": "viewof paginationSize = Inputs.select(pageSizes, {value: 100000, label: 'Page Size'})",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 226,
+            "id": 14,
             "value": "viewof movableColumns = Inputs.toggle({label: 'Movable Columns', value: true})",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 230,
+            "id": 15,
             "value": "viewof movableRows = Inputs.toggle({label: 'Movable Rows', value: true})",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 234,
+            "id": 16,
             "value": "viewof selectableRows = Inputs.toggle({label: 'Selectable Rows', value: true})",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 205,
-            "value": "// from: http://tabulator.info/docs/5.0/layout\ntableLayouts = [\n  'fitData',\n  'fitDataFill',\n  'fitDataStretch',\n  'fitDataTable',\n  'fitColumns'\n]",
+            "id": 17,
+            "value": "// from: http://tabulator.info/docs/5.0/layout\r\ntableLayouts = [\r\n  'fitData',\r\n  'fitDataFill',\r\n  'fitDataStretch',\r\n  'fitDataTable',\r\n  'fitColumns'\r\n]",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 285,
+            "id": 18,
             "value": "pageSizes = [20, 100, 1000, 10000, 100000, 1000000, 10000000]",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 270,
-            "value": "columnHeaderMenu = [\n  {\n    label: 'Hide Column',\n    action: function (e, column) {\n      column.hide();\n    }\n  },\n  {\n    label: \"Freeze Column\",\n    action: function (e, column) {\n      column.updateDefinition({ frozen: true });\n    }\n  },\n  {\n    label: 'Delete Column',\n    action: function (e, column) {\n      column.delete();\n    }\n  }\n];\n",
+            "id": 19,
+            "value": "columnHeaderMenu = [\r\n  {\r\n    label: 'Hide Column',\r\n    action: function (e, column) {\r\n      column.hide();\r\n    }\r\n  },\r\n  {\r\n    label: \"Freeze Column\",\r\n    action: function (e, column) {\r\n      column.updateDefinition({ frozen: true });\r\n    }\r\n  },\r\n  {\r\n    label: 'Delete Column',\r\n    action: function (e, column) {\r\n      column.delete();\r\n    }\r\n  }\r\n];\r\n",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 259,
-            "value": "// row context menu. see: http://tabulator.info/docs/5.0/menu\nrowContextMenu = [\n  {\n    label: \"<i class='fas fa-trash'></i> Delete Row\",\n    action: function(e, row) {row.delete()}\n  },\n  {\n    label: \"Freeze Row\",\n    action: function (e, row) { row.freeze(); }\n  }\n]",
+            "id": 20,
+            "value": "// row context menu. see: http://tabulator.info/docs/5.0/menu\r\nrowContextMenu = [\r\n  {\r\n    label: \"<i class='fas fa-trash'></i> Delete Row\",\r\n    action: function(e, row) {row.delete()}\r\n  },\r\n  {\r\n    label: \"Freeze Row\",\r\n    action: function (e, row) { row.freeze(); }\r\n  }\r\n]",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 197,
+            "id": 21,
             "value": "## Data",
             "pinned": false,
             "mode": "md",
@@ -281,55 +281,55 @@
             "name": ""
         },
         {
-            "id": 48,
+            "id": 22,
             "value": "data = fetchData(dataUrl)",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 29,
+            "id": 23,
             "value": "dataUrlParam = new URLSearchParams(html`<a href>`.search).get('dataUrl')",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 36,
-            "value": "dataSets = [\n  'airports.csv', 'co2-concentration.csv', 'disasters.csv', 'flights-3m.csv', 'flights-airport.csv',\n  'gapminder-health-income.csv', 'github.csv', 'iowa-electricity.csv', 'la-riots.csv', 'lookup_groups.csv',\n  'lookup_people.csv', 'population_engineers_hurricanes.csv', 'seattle-temps.csv', 'seattle-weather.csv',\n  'sf-temps.csv', 'sp500.csv', 'stocks.csv', 'us-employment.csv', 'weather.csv', 'windvectors.csv', 'zipcodes.csv',\n  'barley.json', 'birdstrikes.json', 'budget.json', 'budgets.json', 'burtin.json', 'cars.json', 'climate.json',\n  'countries.json', 'crimea.json', 'driving.json', 'flare-dependencies.json', 'flare.json', \n  'flights-2k.json', 'flights-5k.json', 'flights-10k.json', 'flights-20k.json', \n  'flights-200k.json', 'flights-200k.arrow',\n  'gapminder.json', 'income.json', 'iris.json', 'jobs.json', 'londonCentroids.json',\n  'monarchs.json', 'movies.json', 'normal-2d.json', 'points.json',\n  'udistrict.json', 'unemployment-across-industries.json', 'us-state-capitals.json',\n  'weball26.json', 'wheat.json'\n]",
+            "id": 24,
+            "value": "dataSets = [\r\n  'airports.csv', 'co2-concentration.csv', 'disasters.csv', 'flights-3m.csv', 'flights-airport.csv',\r\n  'gapminder-health-income.csv', 'github.csv', 'iowa-electricity.csv', 'la-riots.csv', 'lookup_groups.csv',\r\n  'lookup_people.csv', 'population_engineers_hurricanes.csv', 'seattle-temps.csv', 'seattle-weather.csv',\r\n  'sf-temps.csv', 'sp500.csv', 'stocks.csv', 'us-employment.csv', 'weather.csv', 'windvectors.csv', 'zipcodes.csv',\r\n  'barley.json', 'birdstrikes.json', 'budget.json', 'budgets.json', 'burtin.json', 'cars.json', 'climate.json',\r\n  'countries.json', 'crimea.json', 'driving.json', 'flare-dependencies.json', 'flare.json', \r\n  'flights-2k.json', 'flights-5k.json', 'flights-10k.json', 'flights-20k.json', \r\n  'flights-200k.json', 'flights-200k.arrow',\r\n  'gapminder.json', 'income.json', 'iris.json', 'jobs.json', 'londonCentroids.json',\r\n  'monarchs.json', 'movies.json', 'normal-2d.json', 'points.json',\r\n  'udistrict.json', 'unemployment-across-industries.json', 'us-state-capitals.json',\r\n  'weball26.json', 'wheat.json'\r\n]",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 41,
-            "value": "async function fetchData(dataUrl) {\n  let data = [];\n  if (dataUrl.endsWith('.csv')) {\n    data = await d3.csvParse(await d3.text(dataUrl), d3.autoType);\n  } \n  else if (dataUrl.endsWith('.json') || dataUrl.endsWith('.geojson')) {\n    data = await d3.json(dataUrl);\n    if (data.features) {\n      data = flattenGeoData(data);\n    }\n  }\n  else if (dataUrl.endsWith('.arrow')) {\n    data = loadArrowData(dataUrl);\n  }\n  return data;\n}",
+            "id": 25,
+            "value": "async function fetchData(dataUrl) {\r\n  let data = [];\r\n  if (dataUrl.endsWith('.csv')) {\r\n    data = await d3.csvParse(await d3.text(dataUrl), d3.autoType);\r\n  } \r\n  else if (dataUrl.endsWith('.json') || dataUrl.endsWith('.geojson')) {\r\n    data = await d3.json(dataUrl);\r\n    if (data.features) {\r\n      data = flattenGeoData(data);\r\n    }\r\n  }\r\n  else if (dataUrl.endsWith('.arrow')) {\r\n    data = loadArrowData(dataUrl);\r\n  }\r\n  return data;\r\n}",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 80,
-            "value": "function flattenGeoData(data) {\n  if (data.features) {\n    const features = data.features.map(feature => {\n      let geometry = {};\n      Object.keys(feature?.geometry).forEach(key => {\n        geometry[`geometry.${key}`] = feature.geometry[key];\n      });\n      let properties = {};\n      Object.keys(feature?.properties).forEach(key => {\n        properties[`${key}`] = feature.properties[key];\n      });\n      const {geometry: g, properties: p, ...restOfKeys} = feature;\n      return {...restOfKeys, ...properties, ...geometry};\n    });\n    return features;\n  }\n  return data;\n}",
+            "id": 26,
+            "value": "function flattenGeoData(data) {\r\n  if (data.features) {\r\n    const features = data.features.map(feature => {\r\n      let geometry = {};\r\n      Object.keys(feature?.geometry).forEach(key => {\r\n        geometry[`geometry.${key}`] = feature.geometry[key];\r\n      });\r\n      let properties = {};\r\n      Object.keys(feature?.properties).forEach(key => {\r\n        properties[`${key}`] = feature.properties[key];\r\n      });\r\n      const {geometry: g, properties: p, ...restOfKeys} = feature;\r\n      return {...restOfKeys, ...properties, ...geometry};\r\n    });\r\n    return features;\r\n  }\r\n  return data;\r\n}",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 43,
-            "value": "async function loadArrowData(dataUrl){\n  const response = await fetch(dataUrl);\n  const arrayBuffer = await response.arrayBuffer();\n  const table = arrow.Table.from(new Uint8Array(arrayBuffer));\n  const rows = Array(table.length);\n  const fields = table.schema.fields.map(d => d.name);  \n  for (let i=0, n=rows.length; i<n; ++i) {\n    const proto = {};\n    fields.forEach((fieldName, index) => {\n      const column = table.getColumnAt(index);\n      proto[fieldName] = column.get(i);\n    });\n    rows[i] = proto;\n  }\n  return rows;\n}",
+            "id": 27,
+            "value": "async function loadArrowData(dataUrl){\r\n  const response = await fetch(dataUrl);\r\n  const arrayBuffer = await response.arrayBuffer();\r\n  const table = arrow.Table.from(new Uint8Array(arrayBuffer));\r\n  const rows = Array(table.length);\r\n  const fields = table.schema.fields.map(d => d.name);  \r\n  for (let i=0, n=rows.length; i<n; ++i) {\r\n    const proto = {};\r\n    fields.forEach((fieldName, index) => {\r\n      const column = table.getColumnAt(index);\r\n      proto[fieldName] = column.get(i);\r\n    });\r\n    rows[i] = proto;\r\n  }\r\n  return rows;\r\n}",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 133,
+            "id": 28,
             "value": "## Table Styles",
             "pinned": false,
             "mode": "md",
@@ -337,23 +337,23 @@
             "name": ""
         },
         {
-            "id": 93,
-            "value": "tableStyles = html `\n<style>\n/* add space for sort direction symbol */\nthead th span {\n  margin-left: 0 !important;\n  padding-right: 0.4rem;\n}\n\n.tabulator .tabulator-tableholder{\n  background-color: aliceblue;\n}\n</style>`",
+            "id": 29,
+            "value": "tableStyles = html `\r\n<style>\r\n/* add space for sort direction symbol */\r\nthead th span {\r\n  margin-left: 0 !important;\r\n  padding-right: 0.4rem;\r\n}\r\n\r\n.tabulator .tabulator-tableholder{\r\n  background-color: aliceblue;\r\n}\r\n</style>`",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 140,
-            "value": "html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />\ntabulator.min.css`",
+            "id": 30,
+            "value": "html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />\r\ntabulator.min.css`",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 7,
+            "id": 31,
             "value": "## Imports",
             "pinned": false,
             "mode": "md",
@@ -361,28 +361,28 @@
             "name": ""
         },
         {
-            "id": 54,
+            "id": 32,
             "value": "import {SummaryTable} from \"@observablehq/summary-table\"",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 121,
+            "id": 33,
             "value": "Tabulator = require('https://unpkg.com/tabulator-tables@5.3.1');",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         },
         {
-            "id": 17,
+            "id": 34,
             "value": "arrow = require('apache-arrow@6.0.1')",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "name": ""
         }
     ],
     "resolutions": []
