@@ -1,0 +1,11 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 1000,
+      "driver": "DuckDBPro",
+      "name": "penguins.duckdb",
+      "group": "DuckDBPro",
+      "database": "${workspaceFolder:observable-data-tools}/data/penguins.duckdb"
+    }
+  ]
+}
