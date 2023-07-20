@@ -1,0 +1,1037 @@
+{
+    "id": "60038562a4759470",
+    "type": "notebook",
+    "slug": "duckdb-data-tables",
+    "trashed": false,
+    "description": "",
+    "likes": 18,
+    "publish_level": "live",
+    "forks": 2,
+    "fork_of": null,
+    "has_importers": true,
+    "update_time": "2022-12-24T14:17:50.458Z",
+    "first_public_version": 356,
+    "paused_version": null,
+    "publish_time": "2022-12-24T14:06:11.616Z",
+    "publish_version": 369,
+    "latest_version": 369,
+    "thumbnail": "73636f360b6b12c078e1b7fcd0fbc1b9013d9558e9b7c53d7d6c2301d1411470",
+    "default_thumbnail": "73636f360b6b12c078e1b7fcd0fbc1b9013d9558e9b7c53d7d6c2301d1411470",
+    "roles": [],
+    "sharing": null,
+    "tags": [],
+    "edits": [
+        {
+            "node_id": 118,
+            "value": "SELECT * FROM penguins"
+        },
+        {
+            "node_id": 167,
+            "value": "tablesDiagram = diagram(db)"
+        }
+    ],
+    "owner": {
+        "id": "17b72db66175b428",
+        "github_login": "RandomFractals",
+        "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+        "login": "randomfractals",
+        "name": "Taras Novak",
+        "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+        "home_url": "https://www.linkedin.com/in/tarasnovak",
+        "type": "individual",
+        "tier": "public",
+        "following_count": 0,
+        "followers_count": 7,
+        "following": false
+    },
+    "creator": {
+        "id": "17b72db66175b428",
+        "github_login": "RandomFractals",
+        "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+        "login": "randomfractals",
+        "name": "Taras Novak",
+        "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+        "home_url": "https://www.linkedin.com/in/tarasnovak",
+        "tier": "public",
+        "following_count": 0,
+        "followers_count": 7,
+        "following": false
+    },
+    "authors": [
+        {
+            "id": "17b72db66175b428",
+            "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+            "name": "Taras Novak",
+            "login": "randomfractals",
+            "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+            "home_url": "https://www.linkedin.com/in/tarasnovak",
+            "github_login": "RandomFractals",
+            "tier": "public",
+            "approved": true,
+            "description": "",
+            "following_count": 0,
+            "followers_count": 7,
+            "following": false
+        }
+    ],
+    "collections": [
+        {
+            "id": "729de16217a66212",
+            "type": "public",
+            "slug": "tables",
+            "title": "Tables",
+            "description": "Tabular data tools and diagraming notebooks.",
+            "update_time": "2022-08-03T12:29:41.521Z",
+            "pinned": false,
+            "ordered": false,
+            "custom_thumbnail": null,
+            "default_thumbnail": "05d4135745e128d1628ad6e5022ad4918935363d56623b1bc583c96cf97766bb",
+            "thumbnail": "05d4135745e128d1628ad6e5022ad4918935363d56623b1bc583c96cf97766bb",
+            "listing_count": 14,
+            "parent_collection_count": 0,
+            "owner": {
+                "id": "17b72db66175b428",
+                "github_login": "RandomFractals",
+                "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+                "login": "randomfractals",
+                "name": "Taras Novak",
+                "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+                "home_url": "https://www.linkedin.com/in/tarasnovak",
+                "type": "individual",
+                "tier": "public",
+                "following_count": 0,
+                "followers_count": 7,
+                "following": false
+            }
+        },
+        {
+            "id": "b6a5a40d17fe1e93",
+            "type": "public",
+            "slug": "duckdb",
+            "title": "DuckDB",
+            "description": "DuckDB notebooks",
+            "update_time": "2022-07-25T12:35:55.614Z",
+            "pinned": false,
+            "ordered": false,
+            "custom_thumbnail": null,
+            "default_thumbnail": "2eeaf903dc4ada16bea5b3400108794a52ebc43494b32ec6e16de17fbff925b1",
+            "thumbnail": "2eeaf903dc4ada16bea5b3400108794a52ebc43494b32ec6e16de17fbff925b1",
+            "listing_count": 4,
+            "parent_collection_count": 0,
+            "owner": {
+                "id": "17b72db66175b428",
+                "github_login": "RandomFractals",
+                "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+                "login": "randomfractals",
+                "name": "Taras Novak",
+                "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+                "home_url": "https://www.linkedin.com/in/tarasnovak",
+                "type": "individual",
+                "tier": "public",
+                "following_count": 0,
+                "followers_count": 7,
+                "following": false
+            }
+        }
+    ],
+    "files": [
+        {
+            "id": "d745b1c19e6f943f6bee6142f11d127963022dee03991df38832ac80a00442a681d652b1f1006e663c9d2eaa56da42e5b89868b1b6c23802655f3195c1c247a8",
+            "url": "https://static.observableusercontent.com/files/d745b1c19e6f943f6bee6142f11d127963022dee03991df38832ac80a00442a681d652b1f1006e663c9d2eaa56da42e5b89868b1b6c23802655f3195c1c247a8",
+            "download_url": "https://static.observableusercontent.com/files/d745b1c19e6f943f6bee6142f11d127963022dee03991df38832ac80a00442a681d652b1f1006e663c9d2eaa56da42e5b89868b1b6c23802655f3195c1c247a8?response-content-disposition=attachment%3Bfilename*%3DUTF-8%27%27penguins.csv",
+            "name": "penguins.csv",
+            "create_time": "2022-07-16T13:09:14.871Z",
+            "mime_type": "text/csv",
+            "status": "public",
+            "size": 13478,
+            "content_encoding": "gzip",
+            "private_bucket_id": null
+        },
+        {
+            "id": "1b162cbaf118c83938194da7a0c646191288da64e97f98f3366b2854ba56b26f56f1f9a6b43c2811c35c968c942da095ca52181dfedf7d47ff4da966662da6aa",
+            "url": "https://static.observableusercontent.com/files/1b162cbaf118c83938194da7a0c646191288da64e97f98f3366b2854ba56b26f56f1f9a6b43c2811c35c968c942da095ca52181dfedf7d47ff4da966662da6aa",
+            "download_url": "https://static.observableusercontent.com/files/1b162cbaf118c83938194da7a0c646191288da64e97f98f3366b2854ba56b26f56f1f9a6b43c2811c35c968c942da095ca52181dfedf7d47ff4da966662da6aa?response-content-disposition=attachment%3Bfilename*%3DUTF-8%27%27iris.json",
+            "name": "iris.json",
+            "create_time": "2022-07-17T08:55:58.671Z",
+            "mime_type": "application/json",
+            "status": "public",
+            "size": 21661,
+            "content_encoding": "gzip",
+            "private_bucket_id": null
+        },
+        {
+            "id": "c3e4dca299f169748624513b39df1b1bb4e04495d7e96bdb32f9d5c5b5538f4a3ac89740936bc5b88cdfe595b2e6fffb6166c680c70b3bc6b94e80757711b05e",
+            "url": "https://static.observableusercontent.com/files/c3e4dca299f169748624513b39df1b1bb4e04495d7e96bdb32f9d5c5b5538f4a3ac89740936bc5b88cdfe595b2e6fffb6166c680c70b3bc6b94e80757711b05e",
+            "download_url": "https://static.observableusercontent.com/files/c3e4dca299f169748624513b39df1b1bb4e04495d7e96bdb32f9d5c5b5538f4a3ac89740936bc5b88cdfe595b2e6fffb6166c680c70b3bc6b94e80757711b05e?response-content-disposition=attachment%3Bfilename*%3DUTF-8%27%27weather.parquet",
+            "name": "weather.parquet",
+            "create_time": "2022-07-17T09:56:29.666Z",
+            "mime_type": "application/octet-stream",
+            "status": "public",
+            "size": 165072,
+            "content_encoding": null,
+            "private_bucket_id": null
+        }
+    ],
+    "comments": [
+        {
+            "id": "3f4cf534393521cc",
+            "content": "My duckdb often runs out of memory if I insert more than 1000 rows via INSERT, seems low and like I should change something. Any ideas?",
+            "node_id": 0,
+            "create_time": "2022-07-17T17:06:22.872Z",
+            "update_time": null,
+            "resolved": true,
+            "user": {
+                "id": "5215f6ec4a999d40",
+                "github_login": "tomlarkworthy",
+                "avatar_url": "https://avatars.observableusercontent.com/avatar/47327a8bc1966f2186dcb3ebf4b7ee6e4e7ab9a5c2a07405aff57200ea778f71",
+                "login": "tomlarkworthy",
+                "name": "Tom Larkworthy",
+                "bio": "Tech Lead at Taktile.\nFormerly Firebase, Google",
+                "home_url": "https://taktile.com",
+                "tier": "pro",
+                "following_count": 10,
+                "followers_count": 20,
+                "following": false
+            }
+        },
+        {
+            "id": "cd87809d5cdd40b4",
+            "content": "Tom,\n\nThis notebook only provides an overview of existing Observable data tools you can use to view DuckDB instance information.\n\nIt's hard to elaborate on your particular scenario without knowing the nature of your dataset, as there are different ways of importing data into DuckDB via:\n\n- batched Inserts: https://duckdb.org/docs/data/insert\n- compressed CSV files: https://duckdb.org/docs/data/csv\n- Appender: https://duckdb.org/docs/data/appender\n- and Parquet Files: https://duckdb.org/docs/data/parquet\n\nAlso, it depends on the dataset you are trying to import, and how many columns each record has. If you are working with a wide column dataset that has hundreds or thousands of columns in it, I would suggest you explore parquet data format: https://parquet.apache.org/docs\n\nYou can also set your memory limit via DuckDB Configuration settings (https://duckdb.org/docs/sql/configuration) briefly covered at the end of this notebook.\n\nI would suggest you post your question in duckdb github repository (https://github.com/duckdb/duckdb/issues) with more information and a sample of the dataset you are trying to import.",
+            "node_id": 0,
+            "create_time": "2022-07-18T14:08:27.994Z",
+            "update_time": null,
+            "resolved": true,
+            "user": {
+                "id": "17b72db66175b428",
+                "github_login": "RandomFractals",
+                "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+                "login": "randomfractals",
+                "name": "Taras Novak",
+                "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+                "home_url": "https://www.linkedin.com/in/tarasnovak",
+                "tier": "public",
+                "following_count": 0,
+                "followers_count": 7,
+                "following": false
+            }
+        }
+    ],
+    "commenting_lock": null,
+    "suggestion_from": null,
+    "suggestions_to": [],
+    "version": 369,
+    "title": "DuckDB Data Tables",
+    "license": "mit",
+    "copyright": "Copyright 2022 Random Fractals Inc.",
+    "nodes": [
+        {
+            "id": 0,
+            "name": "",
+            "value": "# DuckDB Data Tables\n\n[DuckDB](https://observablehq.com/@cmudig/duckdb) [Client](https://observablehq.com/@observablehq/database-client-specification) tables info notebook.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 333,
+            "name": null,
+            "value": "toc()",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 337,
+            "name": "",
+            "value": "## DuckDB Init",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 6,
+            "name": null,
+            "value": "import {DuckDBClient} from '@cmudig/duckdb'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 10,
+            "name": null,
+            "value": "db = DuckDBClient.of([FileAttachment('iris.json'), FileAttachment('penguins.csv'), FileAttachment('weather.parquet')])",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 129,
+            "name": "",
+            "value": "**tip**: use Observable [File Attachments](https://observablehq.com/@observablehq/file-attachments) to add other `.csv`, `.json`, or `.parquet` data files to preview. See [DuckDB Client](https://observablehq.com/@cmudig/duckdb-client) notebook for more info.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 13,
+            "name": "",
+            "value": "",
+            "pinned": true,
+            "mode": "table",
+            "data": {
+                "ui": {
+                    "showCharts": true
+                },
+                "source": {
+                    "name": "db",
+                    "type": "cell",
+                    "dialect": "sql"
+                },
+                "operations": {
+                    "from": {
+                        "table": {
+                            "table": "iris"
+                        },
+                        "mimeType": null
+                    },
+                    "sort": [],
+                    "slice": {
+                        "to": 100,
+                        "from": 0
+                    },
+                    "filter": [],
+                    "select": {
+                        "columns": [
+                            "petal_length",
+                            "petal_width",
+                            "sepal_length",
+                            "sepal_width",
+                            "species"
+                        ]
+                    }
+                }
+            },
+            "outputs": []
+        },
+        {
+            "id": 23,
+            "name": "",
+            "value": "## Database Tables",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 27,
+            "name": "",
+            "value": "SHOW TABLES",
+            "pinned": true,
+            "mode": "sql",
+            "data": {
+                "ui": {
+                    "showCharts": true
+                },
+                "source": {
+                    "name": "db",
+                    "type": "cell",
+                    "dialect": "sql"
+                }
+            },
+            "outputs": []
+        },
+        {
+            "id": 36,
+            "name": null,
+            "value": "db.describe()",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 42,
+            "name": null,
+            "value": "tables = db.describeTables()",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 30,
+            "name": "",
+            "value": "## Table Columns\n\n*Select table:*",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 39,
+            "name": null,
+            "value": "viewof table = Inputs.select(tables.map(table => table.name), {label: md`## Table`})",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 32,
+            "name": null,
+            "value": "db.describe(`${table}`)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 143,
+            "name": null,
+            "value": "tableColumns = (await db.query(`DESCRIBE ${table}`)).toArray().map(Object.fromEntries);",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 65,
+            "name": "",
+            "value": "## Table Summary\n\nSummary of **${table}** table data using [Summary Table](https://observablehq.com/@observablehq/summary-table) Observable cell:",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 67,
+            "name": null,
+            "value": "viewof tableSummary = SummaryTable(data, {label: table})",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 72,
+            "name": "",
+            "value": "## Table Data\n\n**${table}**",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 75,
+            "name": null,
+            "value": "viewof searchResults = Inputs.search(data)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 78,
+            "name": null,
+            "value": "Inputs.table(searchResults)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 69,
+            "name": null,
+            "value": "data = db.sql([`SELECT * FROM ${table}`])",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 86,
+            "name": "",
+            "value": "## Data Wrangler\n\nQuery and transform DuckDB **${table}** data with [Arquero](https://uwdata.github.io/arquero/) in Observable [Data Wrangler](https://observablehq.com/@observablehq/data-wrangler) cell with auto-generated JS data transformations code:",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 99,
+            "name": null,
+            "value": "viewof jsQueryEditor = Wrangler(data)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 114,
+            "name": "",
+            "value": "## Table Data SQL\n\nQuery DuckDB data tables with Observable [SQL cell](https://observablehq.com/@observablehq/sql-cell):",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 118,
+            "name": "",
+            "value": "SELECT * FROM penguins",
+            "pinned": true,
+            "mode": "sql",
+            "data": {
+                "ui": {
+                    "showCharts": true
+                },
+                "source": {
+                    "name": "db",
+                    "type": "cell",
+                    "dialect": "sql"
+                }
+            },
+            "outputs": []
+        },
+        {
+            "id": 121,
+            "name": "",
+            "value": "**tip:** use [DuckDB SQL](https://duckdb.org/docs/sql/introduction) and tables diagram below to draft your SQL cell queries.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 125,
+            "name": "",
+            "value": "## Tables Diagram\n\n[Graphviz](https://graphviz.org) diagram of DuckDB tables with column names and [data types](https://duckdb.org/docs/sql/data_types/overview):",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 167,
+            "name": null,
+            "value": "tablesDiagram = diagram(db)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 141,
+            "name": null,
+            "value": "async function diagram(db) {\r\n  // get database tables and colulmns\r\n  const tables = await db.describeTables();\r\n  const tableDescriptions = await Promise.all(tables.map(table => db.query(`DESCRIBE ${table.name}`)));\r\n  const tableColumns = tables.map((table, index) => tableDescriptions[index].toArray().map(Object.fromEntries));\r\n  \r\n  // create table nodes dot diagram string with html table labels\r\n  const tableNodes = tables.map((table, index) =>\r\n    `\"${table.name}\" [shape=none, label=<\r\n    <table bgcolor=\"#cccccc\" border=\"0\" cellborder=\"0\" cellspacing=\"1\" cellpadding=\"3\">\r\n      <tr>\r\n        <td colspan=\"2\" bgcolor=\"skyblue\">\r\n          <b>${table.name}</b>\r\n        </td>\r\n      </tr>${tableColumns[index].map((column) => `\r\n      <tr>\r\n        <td port=\"${column.column_name}\" align=\"left\" bgcolor=\"white\">${column.column_name}</td>\r\n        <td align=\"left\" bgcolor=\"white\">${column.column_type}</td>\r\n      </tr>`).join('')}}\r\n    </table>\r\n    >]`).join('\\n');\r\n\r\n  return neato`digraph Tables {\r\n    node [fontsize=12]\r\n    rankdir = LR;\r\n    ${tableNodes}\r\n  }`;\r\n}",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 193,
+            "name": "",
+            "value": "### [Mermaid Diagram](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram)",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 197,
+            "name": null,
+            "value": "mermaidTablesDiagram = mermaidDiagram(db)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 199,
+            "name": null,
+            "value": "html`\r\n${DOM.download(await rasterize(mermaidTablesDiagram), `duckdb-tables-diagram.png`, \"Save as PNG\")}\r\n${DOM.download(await serialize(mermaidTablesDiagram), `duckdb-tables-diagram.svg`, \"Save as SVG\")}\r\n`",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 195,
+            "name": null,
+            "value": "async function mermaidDiagram(db) {\r\n  // get database tables and colulmns\r\n  const tables = await db.describeTables();\r\n  const tableDescriptions = await Promise.all(tables.map(table => db.query(`DESCRIBE ${table.name}`)));\r\n  const tableColumns = tables.map((table, index) => tableDescriptions[index].toArray().map(Object.fromEntries));\r\n  \r\n  // create table nodes mermaid diagram string\r\n  const tableNodes = tables.map((table, index) =>\r\n    `${table.name} {\r\n      ${tableColumns[index].map((column) => `${column.column_name} ${column.column_type}`).join('\\n')}\r\n    }`).join('\\n');\r\n\r\n  return mermaid`erDiagram\r\n    ${tableNodes}\r\n  `;  \r\n}",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 234,
+            "name": "",
+            "value": "## DuckDB Information Schema\n\nDuckDB [Information Schema](https://duckdb.org/docs/sql/information_schema) views are standard SQL views that describe the database catalog entries. These views can be filtered to obtain more information about a specific DuckDB table, view, or column.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 246,
+            "name": "",
+            "value": "### Database, Catalog and Schema\n\nThe top level `information_schema.schemata` catalog view lists the catalogs and the schemas present in the database.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 238,
+            "name": null,
+            "value": "Inputs.table(schemas)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 231,
+            "name": null,
+            "value": "schemas = (await db.query('select * from information_schema.schemata')).toArray().map(Object.fromEntries)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 248,
+            "name": "",
+            "value": "### Tables View\n\n`information_schema.tables` view lists the tables and views in DuckDB database instance.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 243,
+            "name": null,
+            "value": "Inputs.table(dataTables)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 241,
+            "name": null,
+            "value": "dataTables = (await db.query('select * from information_schema.tables')).toArray().map(Object.fromEntries)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 256,
+            "name": "",
+            "value": "### Columns View\n\n`information_schema.columns` view lists all database table columns.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 260,
+            "name": null,
+            "value": "Inputs.table(allTableColumns)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 258,
+            "name": null,
+            "value": "allTableColumns = (await db.query('select * from information_schema.columns')).toArray().map(Object.fromEntries)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 271,
+            "name": "",
+            "value": "## DuckDB Pragmas\n\nThe [`PRAGMA`](https://duckdb.org/docs/sql/pragmas) statement is an SQL extension adopted by DuckDB from SQLite. PRAGMA statements can be issued in a similar manner to regular SQL statements. PRAGMA commands may alter the internal state of the database engine, and can influence the subsequent execution or behavior of the engine.\n\nDuckDB provides convenient pragmas to obtains database list, show tables, and table info.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 277,
+            "name": "",
+            "value": "### Database List Pragma",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 275,
+            "name": null,
+            "value": "Inputs.table(databaseList)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 268,
+            "name": null,
+            "value": "databaseList = (await db.query('PRAGMA database_list')).toArray().map(Object.fromEntries)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 281,
+            "name": "",
+            "value": "### Show Tables Pragma",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 285,
+            "name": null,
+            "value": "Inputs.table(tableList)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 283,
+            "name": null,
+            "value": "tableList = (await db.query('PRAGMA show_tables')).toArray().map(Object.fromEntries)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 288,
+            "name": "",
+            "value": "### Table Info Pragma",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 290,
+            "name": null,
+            "value": "viewof selectedTable = Inputs.select(tableList.map(table => table.name), {label: md`#### Table`})",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 298,
+            "name": null,
+            "value": "Inputs.table(tableInfo)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 295,
+            "name": null,
+            "value": "tableInfo = (await db.query(`PRAGMA table_info('${selectedTable}')`)).toArray().map(Object.fromEntries)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 301,
+            "name": "",
+            "value": "### Show Table Pragma",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 305,
+            "name": null,
+            "value": "Inputs.table(showTable)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 303,
+            "name": null,
+            "value": "showTable = (await db.query(`PRAGMA show('${selectedTable}')`)).toArray().map(Object.fromEntries)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 309,
+            "name": "",
+            "value": "### Database Size Pragma",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 315,
+            "name": null,
+            "value": "Inputs.table(databaseSize)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 313,
+            "name": null,
+            "value": "databaseSize = (await db.query('PRAGMA database_size')).toArray().map(Object.fromEntries)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 322,
+            "name": "",
+            "value": "## DuckDB Configuration\n\nDuckDB has a number of [configuration options](https://duckdb.org/docs/sql/configuration) that can be used to change the behavior of the system. The configuration options can be set using either the SET statement or the [PRAGMA](https://duckdb.org/docs/sql/pragmas) statement.\n\n### Configuration Reference",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 325,
+            "name": null,
+            "value": "Inputs.table(databaseConfig)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 320,
+            "name": null,
+            "value": "databaseConfig = (await db.query('SELECT * FROM duckdb_settings()')).toArray().map(Object.fromEntries)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 348,
+            "name": null,
+            "value": "import {libraryVersion} from '@cmudig/duckdb'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 351,
+            "name": null,
+            "value": "libraryVersion",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 49,
+            "name": "",
+            "value": "## Appendix",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 330,
+            "name": null,
+            "value": "import {toc} from '@nebrius/indented-toc'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 106,
+            "name": null,
+            "value": "import {sql} from '@cmudig/highlighter'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 51,
+            "name": null,
+            "value": "import {SummaryTable} from '@observablehq/summary-table'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 88,
+            "name": null,
+            "value": "import { aq, op } from '@uwdata/arquero'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 92,
+            "name": null,
+            "value": "import {Wrangler, op} from '@observablehq/data-wrangler'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 182,
+            "name": null,
+            "value": "import {rasterize, serialize} from '@mbostock/saving-svg'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 132,
+            "name": null,
+            "value": "import {neato} from \"@gordonsmith/graphviz\";",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        }
+    ],
+    "resolutions": [
+        {
+            "type": "notebook",
+            "specifier": "@cmudig/duckdb",
+            "value": "357f1a71f976f173@1066"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@observablehq/summary-table",
+            "value": "253d3c1b5eb8410c@1935"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@mkfreeman/plot-tooltip",
+            "value": "67d1b2c32f1883c4@659"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@observablehq/plot-cheatsheets-marks",
+            "value": "d2dffac0e42406e8@3045"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@observablehq/cheatsheet-utilities",
+            "value": "794aa914fd015c9e@3360"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@nebrius/indented-toc",
+            "value": "9bed702f80a3797e@402"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@observablehq/plot-exploration-penguins",
+            "value": "32eeadb67cb4cbcb@1472"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@mbostock/pbcopy",
+            "value": "ab3e70b29c480e6d@83"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@zanarmstrong/highlight-color-w-dropdown",
+            "value": "8d6618bb2d7befdd@199"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@jashkenas/inputs",
+            "value": "e93997d5089d7165@2303"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@observablehq/plot-stack",
+            "value": "33bc32700f22adb1@885"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@john-guerra/file-input-with-default-value",
+            "value": "1371b3b2446a73b4@307"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@uwdata/arquero",
+            "value": "79750b3b8e929d9d@226"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@observablehq/data-wrangler",
+            "value": "6dcf44d762a0599e@4320"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@mbostock/copier",
+            "value": "ab3e70b29c480e6d@83"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@cmudig/highlighter",
+            "value": "41c6a3678f286c05@83"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@mbostock/saving-svg",
+            "value": "576f8943dbfbd395@114"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@d3/contours",
+            "value": "9d7cc1d26bcca7c7@267"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@d3/color-legend",
+            "value": "a33468b95d0b15b0@808"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@gordonsmith/graphviz",
+            "value": "02cbf24318580ea2@745"
+        }
+    ]
+}
