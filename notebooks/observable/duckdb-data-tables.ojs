@@ -1,0 +1,274 @@
+md`
+# DuckDB Data Tables
+
+[DuckDB](https://observablehq.com/@cmudig/duckdb) [Client](https://observablehq.com/@observablehq/database-client-specification) tables info notebook.
+`;
+
+toc()
+
+md`
+## DuckDB Init
+`;
+
+import {DuckDBClient} from '@cmudig/duckdb'
+
+db = DuckDBClient.of([FileAttachment('iris.json'), FileAttachment('penguins.csv'), FileAttachment('weather.parquet')])
+
+md`
+**tip**: use Observable [File Attachments](https://observablehq.com/@observablehq/file-attachments) to add other \`.csv\`, \`.json\`, or \`.parquet\` data files to preview. See [DuckDB Client](https://observablehq.com/@cmudig/duckdb-client) notebook for more info.
+`;
+
+table`
+
+`;
+
+md`
+## Database Tables
+`;
+
+sql`
+SHOW TABLES
+`;
+
+db.describe()
+
+tables = db.describeTables()
+
+md`
+## Table Columns
+
+*Select table:*
+`;
+
+viewof table = Inputs.select(tables.map(table => table.name), {label: md`## Table`})
+
+db.describe(`${table}`)
+
+tableColumns = (await db.query(`DESCRIBE ${table}`)).toArray().map(Object.fromEntries);
+
+md`
+## Table Summary
+
+Summary of **\${table}** table data using [Summary Table](https://observablehq.com/@observablehq/summary-table) Observable cell:
+`;
+
+viewof tableSummary = SummaryTable(data, {label: table})
+
+md`
+## Table Data
+
+**\${table}**
+`;
+
+viewof searchResults = Inputs.search(data)
+
+Inputs.table(searchResults)
+
+data = db.sql([`SELECT * FROM ${table}`])
+
+md`
+## Data Wrangler
+
+Query and transform DuckDB **\${table}** data with [Arquero](https://uwdata.github.io/arquero/) in Observable [Data Wrangler](https://observablehq.com/@observablehq/data-wrangler) cell with auto-generated JS data transformations code:
+`;
+
+viewof jsQueryEditor = Wrangler(data)
+
+md`
+## Table Data SQL
+
+Query DuckDB data tables with Observable [SQL cell](https://observablehq.com/@observablehq/sql-cell):
+`;
+
+sql`
+SELECT * FROM penguins
+`;
+
+md`
+**tip:** use [DuckDB SQL](https://duckdb.org/docs/sql/introduction) and tables diagram below to draft your SQL cell queries.
+`;
+
+md`
+## Tables Diagram
+
+[Graphviz](https://graphviz.org) diagram of DuckDB tables with column names and [data types](https://duckdb.org/docs/sql/data_types/overview):
+`;
+
+tablesDiagram = diagram(db)
+
+async function diagram(db) {
+  // get database tables and colulmns
+  const tables = await db.describeTables();
+  const tableDescriptions = await Promise.all(tables.map(table => db.query(`DESCRIBE ${table.name}`)));
+  const tableColumns = tables.map((table, index) => tableDescriptions[index].toArray().map(Object.fromEntries));
+
+  // create table nodes dot diagram string with html table labels
+  const tableNodes = tables.map((table, index) =>
+    `"${table.name}" [shape=none, label=<
+    <table bgcolor="#cccccc" border="0" cellborder="0" cellspacing="1" cellpadding="3">
+      <tr>
+        <td colspan="2" bgcolor="skyblue">
+          <b>${table.name}</b>
+        </td>
+      </tr>${tableColumns[index].map((column) => `
+      <tr>
+        <td port="${column.column_name}" align="left" bgcolor="white">${column.column_name}</td>
+        <td align="left" bgcolor="white">${column.column_type}</td>
+      </tr>`).join('')}}
+    </table>
+    >]`).join('\n');
+
+  return neato`digraph Tables {
+    node [fontsize=12]
+    rankdir = LR;
+    ${tableNodes}
+  }`;
+}
+
+md`
+### [Mermaid Diagram](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram)
+`;
+
+mermaidTablesDiagram = mermaidDiagram(db)
+
+html`
+${DOM.download(await rasterize(mermaidTablesDiagram), `duckdb-tables-diagram.png`, "Save as PNG")}
+${DOM.download(await serialize(mermaidTablesDiagram), `duckdb-tables-diagram.svg`, "Save as SVG")}
+`
+
+async function mermaidDiagram(db) {
+  // get database tables and colulmns
+  const tables = await db.describeTables();
+  const tableDescriptions = await Promise.all(tables.map(table => db.query(`DESCRIBE ${table.name}`)));
+  const tableColumns = tables.map((table, index) => tableDescriptions[index].toArray().map(Object.fromEntries));
+
+  // create table nodes mermaid diagram string
+  const tableNodes = tables.map((table, index) =>
+    `${table.name} {
+      ${tableColumns[index].map((column) => `${column.column_name} ${column.column_type}`).join('\n')}
+    }`).join('\n');
+
+  return mermaid`erDiagram
+    ${tableNodes}
+  `;
+}
+
+md`
+## DuckDB Information Schema
+
+DuckDB [Information Schema](https://duckdb.org/docs/sql/information_schema) views are standard SQL views that describe the database catalog entries. These views can be filtered to obtain more information about a specific DuckDB table, view, or column.
+`;
+
+md`
+### Database, Catalog and Schema
+
+The top level \`information_schema.schemata\` catalog view lists the catalogs and the schemas present in the database.
+`;
+
+Inputs.table(schemas)
+
+schemas = (await db.query('select * from information_schema.schemata')).toArray().map(Object.fromEntries)
+
+md`
+### Tables View
+
+\`information_schema.tables\` view lists the tables and views in DuckDB database instance.
+`;
+
+Inputs.table(dataTables)
+
+dataTables = (await db.query('select * from information_schema.tables')).toArray().map(Object.fromEntries)
+
+md`
+### Columns View
+
+\`information_schema.columns\` view lists all database table columns.
+`;
+
+Inputs.table(allTableColumns)
+
+allTableColumns = (await db.query('select * from information_schema.columns')).toArray().map(Object.fromEntries)
+
+md`
+## DuckDB Pragmas
+
+The [\`PRAGMA\`](https://duckdb.org/docs/sql/pragmas) statement is an SQL extension adopted by DuckDB from SQLite. PRAGMA statements can be issued in a similar manner to regular SQL statements. PRAGMA commands may alter the internal state of the database engine, and can influence the subsequent execution or behavior of the engine.
+
+DuckDB provides convenient pragmas to obtains database list, show tables, and table info.
+`;
+
+md`
+### Database List Pragma
+`;
+
+Inputs.table(databaseList)
+
+databaseList = (await db.query('PRAGMA database_list')).toArray().map(Object.fromEntries)
+
+md`
+### Show Tables Pragma
+`;
+
+Inputs.table(tableList)
+
+tableList = (await db.query('PRAGMA show_tables')).toArray().map(Object.fromEntries)
+
+md`
+### Table Info Pragma
+`;
+
+viewof selectedTable = Inputs.select(tableList.map(table => table.name), {label: md`#### Table`})
+
+Inputs.table(tableInfo)
+
+tableInfo = (await db.query(`PRAGMA table_info('${selectedTable}')`)).toArray().map(Object.fromEntries)
+
+md`
+### Show Table Pragma
+`;
+
+Inputs.table(showTable)
+
+showTable = (await db.query(`PRAGMA show('${selectedTable}')`)).toArray().map(Object.fromEntries)
+
+md`
+### Database Size Pragma
+`;
+
+Inputs.table(databaseSize)
+
+databaseSize = (await db.query('PRAGMA database_size')).toArray().map(Object.fromEntries)
+
+md`
+## DuckDB Configuration
+
+DuckDB has a number of [configuration options](https://duckdb.org/docs/sql/configuration) that can be used to change the behavior of the system. The configuration options can be set using either the SET statement or the [PRAGMA](https://duckdb.org/docs/sql/pragmas) statement.
+
+### Configuration Reference
+`;
+
+Inputs.table(databaseConfig)
+
+databaseConfig = (await db.query('SELECT * FROM duckdb_settings()')).toArray().map(Object.fromEntries)
+
+import {libraryVersion} from '@cmudig/duckdb'
+
+libraryVersion
+
+md`
+## Appendix
+`;
+
+import {toc} from '@nebrius/indented-toc'
+
+import {sql} from '@cmudig/highlighter'
+
+import {SummaryTable} from '@observablehq/summary-table'
+
+import { aq, op } from '@uwdata/arquero'
+
+import {Wrangler, op} from '@observablehq/data-wrangler'
+
+import {rasterize, serialize} from '@mbostock/saving-svg'
+
+import {neato} from "@gordonsmith/graphviz";
