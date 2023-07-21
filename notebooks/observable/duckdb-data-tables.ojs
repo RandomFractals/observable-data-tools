@@ -12,14 +12,14 @@ md`
 
 import {DuckDBClient} from '@cmudig/duckdb'
 
-db = DuckDBClient.of([FileAttachment('iris.json'), FileAttachment('penguins.csv'), FileAttachment('weather.parquet')])
+db = DuckDBClient.of({
+  iris: FileAttachment('./iris.json'),
+  penguins: FileAttachment('./penguins.csv'),
+  weather: FileAttachment('./weather.parquet')
+})
 
 md`
 **tip**: use Observable [File Attachments](https://observablehq.com/@observablehq/file-attachments) to add other \`.csv\`, \`.json\`, or \`.parquet\` data files to preview. See [DuckDB Client](https://observablehq.com/@cmudig/duckdb-client) notebook for more info.
-`;
-
-table`
-
 `;
 
 md`

@@ -279,47 +279,6 @@
             "outputs": []
         },
         {
-            "id": 13,
-            "name": "",
-            "value": "",
-            "pinned": true,
-            "mode": "table",
-            "data": {
-                "ui": {
-                    "showCharts": true
-                },
-                "source": {
-                    "name": "db",
-                    "type": "cell",
-                    "dialect": "sql"
-                },
-                "operations": {
-                    "from": {
-                        "table": {
-                            "table": "iris"
-                        },
-                        "mimeType": null
-                    },
-                    "sort": [],
-                    "slice": {
-                        "to": 100,
-                        "from": 0
-                    },
-                    "filter": [],
-                    "select": {
-                        "columns": [
-                            "petal_length",
-                            "petal_width",
-                            "sepal_length",
-                            "sepal_width",
-                            "species"
-                        ]
-                    }
-                }
-            },
-            "outputs": []
-        },
-        {
             "id": 23,
             "name": "",
             "value": "## Database Tables",
