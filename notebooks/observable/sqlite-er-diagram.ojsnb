@@ -1,0 +1,424 @@
+{
+    "id": "41c0c421f7229bd1",
+    "type": "notebook",
+    "slug": "sqlite-er-diagram",
+    "trashed": false,
+    "description": "",
+    "likes": 5,
+    "publish_level": "live",
+    "forks": 1,
+    "fork_of": null,
+    "has_importers": true,
+    "update_time": "2022-12-24T14:29:11.667Z",
+    "first_public_version": 231,
+    "paused_version": null,
+    "publish_time": "2022-12-24T14:24:40.393Z",
+    "publish_version": 238,
+    "latest_version": 238,
+    "thumbnail": "a1c4585554e9a66f5b976b46e862842c15487cc5d6b2799b04ce9750f8379e15",
+    "default_thumbnail": "a1c4585554e9a66f5b976b46e862842c15487cc5d6b2799b04ce9750f8379e15",
+    "roles": [],
+    "sharing": null,
+    "tags": [],
+    "owner": {
+        "id": "17b72db66175b428",
+        "github_login": "RandomFractals",
+        "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+        "login": "randomfractals",
+        "name": "Taras Novak",
+        "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+        "home_url": "https://www.linkedin.com/in/tarasnovak",
+        "type": "individual",
+        "tier": "public",
+        "following_count": 0,
+        "followers_count": 7,
+        "following": false
+    },
+    "creator": {
+        "id": "17b72db66175b428",
+        "github_login": "RandomFractals",
+        "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+        "login": "randomfractals",
+        "name": "Taras Novak",
+        "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+        "home_url": "https://www.linkedin.com/in/tarasnovak",
+        "tier": "public",
+        "following_count": 0,
+        "followers_count": 7,
+        "following": false
+    },
+    "authors": [
+        {
+            "id": "17b72db66175b428",
+            "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+            "name": "Taras Novak",
+            "login": "randomfractals",
+            "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+            "home_url": "https://www.linkedin.com/in/tarasnovak",
+            "github_login": "RandomFractals",
+            "tier": "public",
+            "approved": true,
+            "description": "",
+            "following_count": 0,
+            "followers_count": 7,
+            "following": false
+        }
+    ],
+    "collections": [
+        {
+            "id": "729de16217a66212",
+            "type": "public",
+            "slug": "tables",
+            "title": "Tables",
+            "description": "Tabular data tools and diagraming notebooks.",
+            "update_time": "2022-08-03T12:29:41.521Z",
+            "pinned": false,
+            "ordered": false,
+            "custom_thumbnail": null,
+            "default_thumbnail": "05d4135745e128d1628ad6e5022ad4918935363d56623b1bc583c96cf97766bb",
+            "thumbnail": "05d4135745e128d1628ad6e5022ad4918935363d56623b1bc583c96cf97766bb",
+            "listing_count": 14,
+            "parent_collection_count": 0,
+            "owner": {
+                "id": "17b72db66175b428",
+                "github_login": "RandomFractals",
+                "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+                "login": "randomfractals",
+                "name": "Taras Novak",
+                "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+                "home_url": "https://www.linkedin.com/in/tarasnovak",
+                "type": "individual",
+                "tier": "public",
+                "following_count": 0,
+                "followers_count": 7,
+                "following": false
+            }
+        },
+        {
+            "id": "a04d44ebfa0dd869",
+            "type": "public",
+            "slug": "sqlite",
+            "title": "SQLite",
+            "description": "SQLite notebooks",
+            "update_time": "2022-07-22T14:12:26.398Z",
+            "pinned": false,
+            "ordered": false,
+            "custom_thumbnail": null,
+            "default_thumbnail": null,
+            "thumbnail": null,
+            "listing_count": 2,
+            "parent_collection_count": 0,
+            "owner": {
+                "id": "17b72db66175b428",
+                "github_login": "RandomFractals",
+                "avatar_url": "https://avatars.observableusercontent.com/avatar/57d3bf95c5ecfa9ee3b08dec1a71504412704a6788f769860bf9d5191e789336",
+                "login": "randomfractals",
+                "name": "Taras Novak",
+                "bio": "I map 🗺️ & graph  📈 data 🈸 ",
+                "home_url": "https://www.linkedin.com/in/tarasnovak",
+                "type": "individual",
+                "tier": "public",
+                "following_count": 0,
+                "followers_count": 7,
+                "following": false
+            }
+        }
+    ],
+    "files": [
+        {
+            "id": "b3711cfd9bdf50cbe4e74751164d28e907ce366cd4bf56a39a980a48fdc5f998c42a019716a8033e2b54defdd97e4a55ebe4f6464b4f0678ea0311532605a115",
+            "url": "https://static.observableusercontent.com/files/b3711cfd9bdf50cbe4e74751164d28e907ce366cd4bf56a39a980a48fdc5f998c42a019716a8033e2b54defdd97e4a55ebe4f6464b4f0678ea0311532605a115",
+            "download_url": "https://static.observableusercontent.com/files/b3711cfd9bdf50cbe4e74751164d28e907ce366cd4bf56a39a980a48fdc5f998c42a019716a8033e2b54defdd97e4a55ebe4f6464b4f0678ea0311532605a115?response-content-disposition=attachment%3Bfilename*%3DUTF-8%27%27chinook.db",
+            "name": "chinook.db",
+            "create_time": "2022-07-08T15:07:56.557Z",
+            "mime_type": "application/x-sqlite3",
+            "status": "public",
+            "size": 884736,
+            "content_encoding": null,
+            "private_bucket_id": null
+        }
+    ],
+    "comments": [],
+    "commenting_lock": null,
+    "suggestion_from": null,
+    "suggestions_to": [],
+    "version": 238,
+    "title": "SQLite ER Diagram",
+    "license": "mit",
+    "copyright": "Copyright 2022 Random Fractals Inc.",
+    "nodes": [
+        {
+            "id": 0,
+            "name": "",
+            "value": "# SQLite ER Diagram\n\nWe'll use [`chinook.db`](https://www.sqlitetutorial.net/sqlite-sample-database/) sample [SQLite](https://www.sqlite.org/about.html) database to create an [ER Diagram](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model) with [Graphviz html-like node labels](https://graphviz.org/doc/info/shapes.html#html).",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 6,
+            "name": null,
+            "value": "db = FileAttachment('chinook.db').sqlite()",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 227,
+            "name": null,
+            "value": "db.queryRow(`SELECT sqlite_version()`)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 208,
+            "name": "",
+            "value": "[SQLite](https://observablehq.com/@observablehq/sqlite) notebook provides more information about using SQLite database files in Observable notebooks.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 66,
+            "name": "",
+            "value": "## ER Diagram\n\n**Note**: Click on the `erDiagram` cell vertical **...** menu below to download it in SVG or PNG format.",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 114,
+            "name": null,
+            "value": "erDiagram = diagram(db)",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 202,
+            "name": "",
+            "value": "**See**: the original [Auto-generating an Entity Relationship Diagram from SQLite](https://observablehq.com/@chriszs/auto-generating-an-entity-relationship-diagram-erd-from-sq) notebook with plain [record-based dot diagram](https://graphviz.org/doc/info/shapes.html#record).",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 61,
+            "name": null,
+            "value": "async function diagram(db) {\r\n  const tables = (await db.query(\"SELECT * FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%'\"))\r\n    .filter(({sql}) => sql)\r\n    .map(({sql}) => sqlParser(sql))\r\n    .map((ast) => ast.statement[0]);\r\n  \r\n  const tableNodes = tables.map((table) =>\r\n    `\"${table.name.name}\" [shape=none, label=<\r\n    <table bgcolor=\"#cccccc\" border=\"0\" cellborder=\"0\" cellspacing=\"1\" cellpadding=\"3\">\r\n      <tr>\r\n        <td colspan=\"2\" bgcolor=\"skyblue\"><b>${table.name.name}</b></td>\r\n      </tr>${table.definition.filter(({variant}) => variant === 'column').map(({name, datatype}) => `\r\n      <tr>\r\n        <td port=\"${name}\" align=\"left\" bgcolor=\"white\">${name}</td>\r\n        <td align=\"left\" bgcolor=\"white\">${datatype?.variant} ${datatype?.args?.expression?.[0]?.value ? `(${datatype?.args?.expression?.[0]?.value})` : ''}</td>\r\n      </tr>`).join('')}}\r\n    </table>\r\n    >]`).join('\\n');\r\n\r\n  const tableReferences = (await db.query(`\r\n    SELECT sqlite_master.name as from_table,\r\n      fk_info.[from] as from_column,\r\n      fk_info.[table] as to_table,\r\n      fk_info.[to] as to_column\r\n    FROM sqlite_master\r\n    JOIN pragma_foreign_key_list(sqlite_master.name) as fk_info\r\n    ORDER BY sqlite_master.name\r\n  `)).map((reference) =>\r\n    `${reference.from_table}:${reference.from_column} -> ${reference.to_table}:${reference.to_column}`).join('\\n');\r\n  \r\n  return dot`digraph ERD {\r\n    node [fontsize=12]\r\n    rankdir = TB\r\n    ${tableNodes}\r\n    ${tableReferences}\r\n  }`;\r\n}",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 13,
+            "name": "",
+            "value": "## Database Tables",
+            "pinned": false,
+            "mode": "md",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 23,
+            "name": null,
+            "value": "db.describeTables()",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 9,
+            "name": null,
+            "value": "db.describe()",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 26,
+            "name": null,
+            "value": "db.describe('albums')",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 15,
+            "name": null,
+            "value": "db.describe('tracks')",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 17,
+            "name": null,
+            "value": "db.describeColumns({table: 'tracks'})",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 28,
+            "name": null,
+            "value": "tracks = db.query(`SELECT * FROM tracks`)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 30,
+            "name": null,
+            "value": "Inputs.table(tracks)",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 32,
+            "name": "data",
+            "value": "SELECT * FROM tracks",
+            "pinned": true,
+            "mode": "sql",
+            "data": {
+                "ui": {
+                    "showCharts": true
+                },
+                "source": {
+                    "name": "db",
+                    "type": "cell",
+                    "dialect": "sqlite"
+                }
+            },
+            "outputs": []
+        },
+        {
+            "id": 183,
+            "name": "foreignKeysInfo",
+            "value": "SELECT sqlite_master.name as from_table,\r\n  fk_info.[from] as from_column,\r\n  fk_info.[table] as to_table,\r\n  fk_info.[to] as to_column\r\nFROM sqlite_master\r\nJOIN pragma_foreign_key_list(sqlite_master.name) as fk_info\r\nORDER BY sqlite_master.name",
+            "pinned": false,
+            "mode": "sql",
+            "data": {
+                "ui": {
+                    "showCharts": true
+                },
+                "source": {
+                    "name": "db",
+                    "type": "cell",
+                    "dialect": "sql"
+                }
+            },
+            "outputs": []
+        },
+        {
+            "id": 149,
+            "name": null,
+            "value": "tables = await db.query(\"SELECT * FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%'\")",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 136,
+            "name": null,
+            "value": "tableStatements = tables.filter((table) => table.sql)\r\n  .map((table) => sqlParser(table.sql))\r\n  .map((ast) => ast.statement[0]);",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 160,
+            "name": null,
+            "value": "tableDefinitions = tableStatements.filter(statement => statement.format === 'table')\r\n  .map(statement => ({table: statement.name?.name, columns: statement.definition}))",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 163,
+            "name": null,
+            "value": "tableConstraints = tableDefinitions.map(table => ({\r\n  table: table.table,\r\n  constraints: table.columns.filter(column => column.definition.length > 0)\r\n    .map(column => ({\r\n      column: column.name,\r\n      type: column.definition[0].variant,\r\n      contstraint: column.definition[0]\r\n    }))\r\n}))",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 166,
+            "name": null,
+            "value": "primaryKeys = tableConstraints.map(table => ({\r\n  table: table.table,\r\n  primaryKey: table.constraints.filter(constraint => constraint.type === 'primary key')[0].column\r\n}))",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 169,
+            "name": null,
+            "value": "foreignKeys = tableConstraints.map(table => ({\r\n  table: table.table,\r\n  foreignKeys: table.constraints.filter(constraint => constraint.type === 'foreign key')\r\n}))",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 36,
+            "name": null,
+            "value": "sqlParser = require('sqlite-parser')",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 38,
+            "name": null,
+            "value": "import {dot} from '@gordonsmith/graphviz'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        },
+        {
+            "id": 99,
+            "name": null,
+            "value": "import {displayDot} from '@oscar6echo/zoom-and-pan-graphviz-dot'",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "outputs": []
+        }
+    ],
+    "resolutions": [
+        {
+            "type": "notebook",
+            "specifier": "@oscar6echo/zoom-and-pan-graphviz-dot",
+            "value": "f1aed80c70f140fb@1544"
+        },
+        {
+            "type": "notebook",
+            "specifier": "@gordonsmith/graphviz",
+            "value": "02cbf24318580ea2@745"
+        }
+    ]
+}
