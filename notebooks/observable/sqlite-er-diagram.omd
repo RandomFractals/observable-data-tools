@@ -77,6 +77,7 @@ db.describeColumns({table: 'tracks'})
 tracks = db.query(`SELECT * FROM tracks`)
 
 Inputs.table(tracks)
+```
 
 sql`SELECT * FROM tracks`;
 
@@ -88,6 +89,7 @@ FROM sqlite_master
 JOIN pragma_foreign_key_list(sqlite_master.name) as fk_info
 ORDER BY sqlite_master.name`;
 
+```
 tables = await db.query("SELECT * FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%'")
 
 tableStatements = tables.filter((table) => table.sql)
