@@ -1,0 +1,130 @@
+md`
+# SQLite ER Diagram
+
+We'll use [\`chinook.db\`](https://www.sqlitetutorial.net/sqlite-sample-database/) sample [SQLite](https://www.sqlite.org/about.html) database to create an [ER Diagram](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model) with [Graphviz html-like node labels](https://graphviz.org/doc/info/shapes.html#html).
+`;
+
+db = FileAttachment('./chinook.db').sqlite()
+
+db.queryRow(`SELECT sqlite_version()`)
+
+md`
+[SQLite](https://observablehq.com/@observablehq/sqlite) notebook provides more information about using SQLite database files in Observable notebooks.
+`;
+
+md`
+## ER Diagram
+
+**Note**: Click on the \`erDiagram\` cell vertical **...** menu below to download it in SVG or PNG format.
+`;
+
+erDiagram = diagram(db)
+
+md`
+**See**: the original [Auto-generating an Entity Relationship Diagram from SQLite](https://observablehq.com/@chriszs/auto-generating-an-entity-relationship-diagram-erd-from-sq) notebook with plain [record-based dot diagram](https://graphviz.org/doc/info/shapes.html#record).
+`;
+
+async function diagram(db) {
+  const tables = (await db.query("SELECT * FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%'"))
+    .filter(({sql}) => sql)
+    .map(({sql}) => sqlParser(sql))
+    .map((ast) => ast.statement[0]);
+
+  const tableNodes = tables.map((table) =>
+    `"${table.name.name}" [shape=none, label=<
+    <table bgcolor="#cccccc" border="0" cellborder="0" cellspacing="1" cellpadding="3">
+      <tr>
+        <td colspan="2" bgcolor="skyblue"><b>${table.name.name}</b></td>
+      </tr>${table.definition.filter(({variant}) => variant === 'column').map(({name, datatype}) => `
+      <tr>
+        <td port="${name}" align="left" bgcolor="white">${name}</td>
+        <td align="left" bgcolor="white">${datatype?.variant} ${datatype?.args?.expression?.[0]?.value ? `(${datatype?.args?.expression?.[0]?.value})` : ''}</td>
+      </tr>`).join('')}}
+    </table>
+    >]`).join('\n');
+
+  const tableReferences = (await db.query(`
+    SELECT sqlite_master.name as from_table,
+      fk_info.[from] as from_column,
+      fk_info.[table] as to_table,
+      fk_info.[to] as to_column
+    FROM sqlite_master
+    JOIN pragma_foreign_key_list(sqlite_master.name) as fk_info
+    ORDER BY sqlite_master.name
+  `)).map((reference) =>
+    `${reference.from_table}:${reference.from_column} -> ${reference.to_table}:${reference.to_column}`).join('\n');
+
+  return dot`digraph ERD {
+    node [fontsize=12]
+    rankdir = TB
+    ${tableNodes}
+    ${tableReferences}
+  }`;
+}
+
+md`
+## Database Tables
+`;
+
+db.describeTables()
+
+db.describe()
+
+db.describe('albums')
+
+db.describe('tracks')
+
+db.describeColumns({table: 'tracks'})
+
+tracks = db.query(`SELECT * FROM tracks`)
+
+Inputs.table(tracks)
+
+sql`
+SELECT * FROM tracks
+`;
+
+sql`
+SELECT sqlite_master.name as from_table,
+  fk_info.[from] as from_column,
+  fk_info.[table] as to_table,
+  fk_info.[to] as to_column
+FROM sqlite_master
+JOIN pragma_foreign_key_list(sqlite_master.name) as fk_info
+ORDER BY sqlite_master.name
+`;
+
+tables = await db.query("SELECT * FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%'")
+
+tableStatements = tables.filter((table) => table.sql)
+  .map((table) => sqlParser(table.sql))
+  .map((ast) => ast.statement[0]);
+
+tableDefinitions = tableStatements.filter(statement => statement.format === 'table')
+  .map(statement => ({table: statement.name?.name, columns: statement.definition}))
+
+tableConstraints = tableDefinitions.map(table => ({
+  table: table.table,
+  constraints: table.columns.filter(column => column.definition.length > 0)
+    .map(column => ({
+      column: column.name,
+      type: column.definition[0].variant,
+      contstraint: column.definition[0]
+    }))
+}))
+
+primaryKeys = tableConstraints.map(table => ({
+  table: table.table,
+  primaryKey: table.constraints.filter(constraint => constraint.type === 'primary key')[0].column
+}))
+
+foreignKeys = tableConstraints.map(table => ({
+  table: table.table,
+  foreignKeys: table.constraints.filter(constraint => constraint.type === 'foreign key')
+}))
+
+sqlParser = require('sqlite-parser')
+
+import {dot} from '@gordonsmith/graphviz'
+
+import {displayDot} from '@oscar6echo/zoom-and-pan-graphviz-dot'
