@@ -131,7 +131,8 @@ async function mermaidDiagram(db) {
 async function diagram(db) {
   // get database tables and colulmns
   const tables = await describe(db);
-  const tableColumns = await Promise.all(tables.map(table => db.sql([`SHOW COLUMNS FROM ${table};`])));
+  const tableColumns = await Promise.all(
+    tables.map(table => db.sql([`SHOW COLUMNS FROM ${table};`])));
 
   // create table nodes dot diagram string with html table labels
   const tableNodes = tables.map((table, index) =>
@@ -149,7 +150,7 @@ async function diagram(db) {
     </table>
     >]`).join('\n');
 
-  return dot`digraph Tables {
+  return neato`digraph Tables {
     node [fontsize=12]
     rankdir = LR;
     ${tableNodes}
@@ -159,23 +160,9 @@ async function diagram(db) {
 async function describe(db) {
   // get database table names
   return (await db.sql(['SHOW TABLES;'])).map(table => table.table) // table name
-    .filter(tableName => tableName !== 'sys.column_versions_purge_log') // skip system tables
+    .filter(tableName => !tableName.startsWith('sys')); // skip system tables
 }
 
-function layout(layout) {
-  return function*(parts, ...args) {
-    yield html`<div>...loading...</div>`;
-
-    const str = parts
-      .map((s, i) => s + (i < args.length ? args[i] : ""))
-      .join("");
-    yield graphviz.layout(str, "svg", layout).then(svg => {
-      return html`<div>${svg}</div>`;
-    });
-  };
-}
-
-dot = layout('neato')
 ```
 
 ## Appendix
@@ -191,17 +178,9 @@ import {SummaryTable} from '@observablehq/summary-table'
 
 import { aq, op } from '@uwdata/arquero'
 
- import {Wrangler, op} from "@observablehq/data-wrangler"
+import {Wrangler, op} from '@observablehq/data-wrangler'
 
 import {rasterize, serialize} from '@mbostock/saving-svg'
 
-graphviz = {
-  const path = await require.resolve("@hpcc-js/wasm");
-  const hpccWasm = await require(path);
-  //  Setting wasmFolder is not typically needed ---
-  const pathParts = path.split("/");
-  pathParts.pop();
-  hpccWasm.wasmFolder(pathParts.join("/"));
-  return hpccWasm.graphviz;
-}
+import {neato} from '@gordonsmith/graphviz'
 ```
