@@ -120,7 +120,8 @@ async function mermaidDiagram(db) {
   // create table nodes mermaid diagram string
   const tableNodes = tables.map((table, index) =>
     `${table} {
-      ${tableColumns[index].map((column) => `${column.column} ${column.type}`).join('\n')}
+      ${tableColumns[index].map((column) =>
+        `${column.column} ${column.type.replace('(', '-').replace(')', '')}`).join('\n')}
     }`).join('\n');
 
   return mermaid`erDiagram
