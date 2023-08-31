@@ -24,7 +24,7 @@ tables = db.sql(['SHOW TABLES;'])
 ```
 viewof table = Inputs.select(tables.map(table => table.table)
   // filter out system tables
-  .filter(tableName => tableName !== 'sys.column_versions_purge_log')
+  .filter(tableName => !tableName.startsWith('sys'))
   .sort().reverse(),
   {
     label: md`## Table`
