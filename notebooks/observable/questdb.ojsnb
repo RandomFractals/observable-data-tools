@@ -90,54 +90,61 @@
     "nodes": [
         {
             "id": 0,
+            "name": "",
             "value": "# QuestDB\n\n[QuestDB](https://github.com/questdb/questdb) is a high-performance, open-source SQL database for applications in financial services, IoT, machine learning, DevOps and observability. It includes endpoints for PostgreSQL wire protocol, high-throughput schema-agnostic ingestion using InfluxDB Line Protocol, and a REST API for queries, bulk imports, and exports.",
             "pinned": false,
             "mode": "md",
             "data": null,
-            "name": ""
+            "outputs": []
         },
         {
             "id": 280,
+            "name": null,
             "value": "toc()",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 283,
+            "name": "",
             "value": "## QuestDB Client",
             "pinned": false,
             "mode": "md",
             "data": null,
-            "name": ""
+            "outputs": []
         },
         {
             "id": 17,
+            "name": "",
             "value": "We'll use [QuestDB](https://observablehq.com/@observablehq/questdb?collection=@observablehq/database-clients) Observable [DatabaseClient](https://observablehq.com/@observablehq/database-client-specification) implementation to connect to the [QuestDB demo](https://demo.questdb.io/) database instance and run [QuestDB SQL](https://questdb.io/docs/concept/sql-execution-order) queries:",
             "pinned": false,
             "mode": "md",
             "data": null,
-            "name": ""
+            "outputs": []
         },
         {
             "id": 11,
+            "name": null,
             "value": "db = new QuestDatabaseClient(\"https://demo.questdb.io\")",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 60,
+            "name": "",
             "value": "## Database Tables\n\nQuestDB [`SHOW`](https://questdb.io/docs/reference/sql/show) SQL lists database tables and columns:",
             "pinned": false,
             "mode": "md",
             "data": null,
-            "name": ""
+            "outputs": []
         },
         {
             "id": 13,
+            "name": "",
             "value": "SHOW TABLES",
             "pinned": true,
             "mode": "sql",
@@ -151,130 +158,146 @@
                     "dialect": "sql"
                 }
             },
-            "name": ""
+            "outputs": []
         },
         {
             "id": 36,
+            "name": null,
             "value": "tables = db.sql(['SHOW TABLES;'])",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 32,
+            "name": "",
             "value": "## Table Columns\n\n*Select table:*",
             "pinned": false,
             "mode": "md",
             "data": null,
-            "name": ""
+            "outputs": []
         },
         {
             "id": 30,
-            "value": "viewof table = Inputs.select(tables.map(table => table.table)\n  // filter out system tables\n  .filter(tableName => tableName !== 'sys.column_versions_purge_log')\n  .sort().reverse(), \n  {\n    label: md`## Table`\n  })",
+            "name": null,
+            "value": "viewof table = Inputs.select(tables.map(table => table.table)\r\n  // filter out system tables\r\n  .filter(tableName => !tableName.startsWith('sys'))\r\n  .sort().reverse(), \r\n  {\r\n    label: md`## Table`\r\n  })",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 53,
+            "name": null,
             "value": "Inputs.table(tableColumns)",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 64,
+            "name": null,
             "value": "tableColumns = db.sql([`SHOW COLUMNS FROM ${table};`])",
             "pinned": true,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 69,
+            "name": "",
             "value": "## Table Summary\n\nTable summary of the max last ${rowLimit} rows from the `${table}` table using [Summary Table](https://observablehq.com/@observablehq/summary-table) Observable cell:",
             "pinned": false,
             "mode": "md",
             "data": null,
-            "name": ""
+            "outputs": []
         },
         {
             "id": 152,
+            "name": null,
             "value": "viewof rowLimit = Inputs.select([1000, 10000, 50000], {label: 'Row Limit:'})",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 90,
+            "name": null,
             "value": "viewof tableSummary = SummaryTable(data, {label: table})",
             "pinned": true,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 98,
+            "name": "",
             "value": "## Table Data\n\n**${table}**",
             "pinned": false,
             "mode": "md",
             "data": null,
-            "name": ""
+            "outputs": []
         },
         {
             "id": 103,
+            "name": null,
             "value": "viewof searchResults = Inputs.search(data)",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 105,
+            "name": null,
             "value": "Inputs.table(searchResults)",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 85,
+            "name": null,
             "value": "data = db.sql([`SELECT * FROM ${table} LIMIT -${rowLimit}`])",
             "pinned": true,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 114,
+            "name": "",
             "value": "## Data Wrangler\n\nQuery and transform QuestDB `${table}` data with [Arquero](https://uwdata.github.io/arquero/) in Observable [Data Wrangler](https://observablehq.com/@observablehq/data-wrangler) cell with auto-generated JS data transformations code:",
             "pinned": false,
             "mode": "md",
             "data": null,
-            "name": ""
+            "outputs": []
         },
         {
             "id": 131,
+            "name": null,
             "value": "viewof queryEditor = Wrangler(data)",
             "pinned": true,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 159,
+            "name": "",
             "value": "## Table Data SQL\n\nQuery QuestDB tables with Observable [SQL cell](https://observablehq.com/@observablehq/sql-cell):",
             "pinned": false,
             "mode": "md",
             "data": null,
-            "name": ""
+            "outputs": []
         },
         {
             "id": 162,
+            "name": "",
             "value": "SELECT * FROM weather LIMIT -1000",
             "pinned": true,
             "mode": "sql",
@@ -288,159 +311,160 @@
                     "dialect": "sql"
                 }
             },
-            "name": ""
+            "outputs": []
         },
         {
             "id": 268,
+            "name": "",
             "value": "**tip:** use [QuestDB SQL](https://questdb.io/docs/concept/sql-execution-order/) docs and tables diagram below to draft your SQL cell queries.",
             "pinned": false,
             "mode": "md",
             "data": null,
-            "name": ""
+            "outputs": []
         },
         {
             "id": 178,
+            "name": "",
             "value": "## Tables Diagram\n\n[Graphviz](https://graphviz.org) tables diagram with table column names and column data types:\n\n**tip**: click on the `tablesDiagram` cell vertical ... menu below to download it in SVG or PNG format.",
             "pinned": false,
             "mode": "md",
             "data": null,
-            "name": ""
+            "outputs": []
         },
         {
             "id": 191,
+            "name": null,
             "value": "tablesDiagram = diagram(db)",
             "pinned": true,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 243,
+            "name": "",
             "value": "### [Mermaid ER Diagram](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram)\n\nTODO: get all the tables to show in this mermaid diagram as in the dot diagram above.",
             "pinned": false,
             "mode": "md",
             "data": null,
-            "name": ""
+            "outputs": []
         },
         {
             "id": 247,
+            "name": null,
             "value": "mermaidTablesDiagram = mermaidDiagram(db)",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 257,
-            "value": "html`\n${DOM.download(await rasterize(mermaidTablesDiagram), `questdb-tables-diagram.png`, \"Save as PNG\")}\n${DOM.download(await serialize(mermaidTablesDiagram), `questdb-tables-diagram.svg`, \"Save as SVG\")}\n`",
+            "name": null,
+            "value": "html`\r\n${DOM.download(await rasterize(mermaidTablesDiagram), `questdb-tables-diagram.png`, \"Save as PNG\")}\r\n${DOM.download(await serialize(mermaidTablesDiagram), `questdb-tables-diagram.svg`, \"Save as SVG\")}\r\n`",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 240,
-            "value": "async function mermaidDiagram(db) {\n  // get database tables and colulmns\n  const tables = await describe(db);\n  const tableColumns = await Promise.all(tables.map(table => db.sql([`SHOW COLUMNS FROM ${table};`])));\n\n  // create table nodes mermaid diagram string\n  const tableNodes = tables.map((table, index) =>\n    `${table} {\n      ${tableColumns[index].map((column) => `${column.column} ${column.type}`).join('\\n')}\n    }`).join('\\n');\n\n  return mermaid`erDiagram\n    ${tableNodes}\n  `;  \n}",
+            "name": null,
+            "value": "async function mermaidDiagram(db) {\r\n  // get database tables and colulmns\r\n  const tables = await describe(db);\r\n  const tableColumns = await Promise.all(tables.map(table => db.sql([`SHOW COLUMNS FROM ${table};`])));\r\n\r\n  // create table nodes mermaid diagram string\r\n  const tableNodes = tables.map((table, index) =>\r\n    `${table} {\r\n      ${tableColumns[index].map((column) => \r\n        `${column.column} ${column.type.replace('(', '-').replace(')', '')}`).join('\\n')}\r\n    }`).join('\\n');\r\n\r\n  return mermaid`erDiagram\r\n    ${tableNodes}\r\n  `;  \r\n}",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 189,
-            "value": "async function diagram(db) {\n  // get database tables and colulmns\n  const tables = await describe(db);\n  const tableColumns = await Promise.all(tables.map(table => db.sql([`SHOW COLUMNS FROM ${table};`])));\n\n  // create table nodes dot diagram string with html table labels\n  const tableNodes = tables.map((table, index) =>\n    `\"${table}\" [shape=none, label=<\n    <table bgcolor=\"#cccccc\" border=\"0\" cellborder=\"0\" cellspacing=\"1\" cellpadding=\"3\">\n      <tr>\n        <td colspan=\"2\" bgcolor=\"skyblue\">\n          <b>${table}</b>\n        </td>\n      </tr>${tableColumns[index].map((column) => `\n      <tr>\n        <td port=\"${column.column}\" align=\"left\" bgcolor=\"white\">${column.column}</td>\n        <td align=\"left\" bgcolor=\"white\">${column.type}</td>\n      </tr>`).join('')}}\n    </table>\n    >]`).join('\\n');\n\n  return dot`digraph Tables {\n    node [fontsize=12]\n    rankdir = LR;\n    ${tableNodes}\n  }`;\n}",
+            "name": null,
+            "value": "async function diagram(db) {\r\n  // get database tables and colulmns\r\n  const tables = await describe(db);\r\n  const tableColumns = await Promise.all(tables.map(table => db.sql([`SHOW COLUMNS FROM ${table};`])));\r\n\r\n  // create table nodes dot diagram string with html table labels\r\n  const tableNodes = tables.map((table, index) =>\r\n    `\"${table}\" [shape=none, label=<\r\n    <table bgcolor=\"#cccccc\" border=\"0\" cellborder=\"0\" cellspacing=\"1\" cellpadding=\"3\">\r\n      <tr>\r\n        <td colspan=\"2\" bgcolor=\"skyblue\">\r\n          <b>${table}</b>\r\n        </td>\r\n      </tr>${tableColumns[index].map((column) => `\r\n      <tr>\r\n        <td port=\"${column.column}\" align=\"left\" bgcolor=\"white\">${column.column}</td>\r\n        <td align=\"left\" bgcolor=\"white\">${column.type}</td>\r\n      </tr>`).join('')}}\r\n    </table>\r\n    >]`).join('\\n');\r\n\r\n  return neato`digraph Tables {\r\n    node [fontsize=12]\r\n    rankdir = LR;\r\n    ${tableNodes}\r\n  }`;\r\n}",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 233,
-            "value": "async function describe(db) {\n  // get database table names\n  return (await db.sql(['SHOW TABLES;'])).map(table => table.table) // table name\n    .filter(tableName => tableName !== 'sys.column_versions_purge_log') // skip system tables\n}",
+            "name": null,
+            "value": "async function describe(db) {\r\n  // get database table names\r\n  return (await db.sql(['SHOW TABLES;'])).map(table => table.table) // table name\r\n    .filter(tableName => !tableName.startsWith('sys')); // skip system tables\r\n}",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
-        },
-        {
-            "id": 183,
-            "value": "function layout(layout) {\n  return function*(parts, ...args) {\n    yield html`<div>...loading...</div>`;\n\n    const str = parts\n      .map((s, i) => s + (i < args.length ? args[i] : \"\"))\n      .join(\"\");\n    yield graphviz.layout(str, \"svg\", layout).then(svg => {\n      return html`<div>${svg}</div>`;\n    });\n  };\n}",
-            "pinned": false,
-            "mode": "js",
-            "data": null,
-            "name": null
-        },
-        {
-            "id": 186,
-            "value": "dot = layout('neato')",
-            "pinned": false,
-            "mode": "js",
-            "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 5,
+            "name": "",
             "value": "## Appendix",
             "pinned": false,
             "mode": "md",
             "data": null,
-            "name": ""
+            "outputs": []
         },
         {
             "id": 272,
+            "name": null,
             "value": "import {toc} from '@nebrius/indented-toc'",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 7,
+            "name": null,
             "value": "import {QuestDatabaseClient} from '@observablehq/questdb'",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 71,
+            "name": null,
             "value": "import {SummaryTable} from '@observablehq/summary-table'",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 116,
+            "name": null,
             "value": "import { aq, op } from '@uwdata/arquero'",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 121,
-            "value": " import {Wrangler, op} from \"@observablehq/data-wrangler\"",
+            "name": null,
+            "value": " import {Wrangler, op} from '@observablehq/data-wrangler'",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 250,
+            "name": null,
             "value": "import {rasterize, serialize} from '@mbostock/saving-svg'",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 180,
-            "value": "graphviz = {\n  const path = await require.resolve(\"@hpcc-js/wasm\");\n  const hpccWasm = await require(path);\n  //  Setting wasmFolder is not typically needed ---\n  const pathParts = path.split(\"/\");\n  pathParts.pop();  \n  hpccWasm.wasmFolder(pathParts.join(\"/\"));\n  return hpccWasm.graphviz;\n}",
+            "name": null,
+            "value": "import {neato} from '@gordonsmith/graphviz'",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         }
     ],
     "resolutions": [
